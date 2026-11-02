@@ -1,0 +1,3 @@
+category,difficulty,type,prompt,option1,option2,option3,option4,answer,status,author
+ai,easy,choice4,Example question text?,Option A,Option B,Option C,Option D,1,draft,your_name
+digital,easy,ox,Example true/false statement.,,,,,O,draft,your_name
