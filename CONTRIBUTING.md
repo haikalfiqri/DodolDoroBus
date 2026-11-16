@@ -16,10 +16,11 @@ Branch names:
 
 | Prefix | Use |
 |---|---|
-| `feature/` | New thing, e.g. `feature/spirit-xp` |
+| `feature/` | New thing, e.g. `feature/pet-xp` |
 | `fix/` | Bug fix, e.g. `fix/mailbox-double-claim` |
 | `docs/` | Documentation only, e.g. `docs/erd-v3` |
 | `questions/` | Question sets, e.g. `questions/ai-easy-batch1` |
+| `content/` | Game data changes, e.g. `content/ch1-dialogue` |
 
 ## Commits
 
@@ -48,6 +49,7 @@ Before you start new work, pull the latest `main` again.
 | `backend/` | Akip |
 | `frontend/` | Wafi |
 | `db/` | Akip |
+| `content/` | Planning (story, stages, pets) |
 | `questions/` | Imran, Wam, Asyraf, Haikal |
 | `docs/` | Haikal |
 

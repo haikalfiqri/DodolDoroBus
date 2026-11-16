@@ -1,0 +1,99 @@
+{
+  "mission_types": [
+    {
+      "id": "choice4",
+      "status": "must",
+      "time_s": 20,
+      "grading": "selected index == answer index"
+    },
+    {
+      "id": "ox",
+      "status": "must",
+      "time_s": 20,
+      "grading": "O/X == answer"
+    },
+    {
+      "id": "order",
+      "status": "must",
+      "time_s": 30,
+      "grading": "submitted order == stored order"
+    },
+    {
+      "id": "keyword",
+      "status": "must",
+      "time_s": 30,
+      "grading": "normalized text in accepted answers list"
+    },
+    {
+      "id": "command_order",
+      "status": "must",
+      "time_s": 30,
+      "grading": "submitted block sequence == stored sequence",
+      "payload_example": {
+        "blocks": [
+          "앞으로",
+          "왼쪽 돌기",
+          "앞으로",
+          "멈춤"
+        ],
+        "answer": [
+          0,
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "id": "pixel_art",
+      "status": "should",
+      "time_s": 45,
+      "grading": "submitted grid == target grid",
+      "payload_example": {
+        "size": [
+          5,
+          5
+        ],
+        "palette": [
+          "#000000",
+          "#FFFFFF"
+        ],
+        "target": [
+          "01110",
+          "10001",
+          "11111",
+          "10001",
+          "10001"
+        ]
+      }
+    },
+    {
+      "id": "puzzle",
+      "status": "should",
+      "time_s": 30,
+      "grading": "answer == stored answer",
+      "payload_example": {
+        "sequence": [
+          2,
+          4,
+          8,
+          16,
+          "?"
+        ],
+        "choices": [
+          18,
+          24,
+          32,
+          30
+        ],
+        "answer": 2
+      }
+    },
+    {
+      "id": "rhythm",
+      "status": "could",
+      "time_s": 30,
+      "grading": "skip unless time remains"
+    }
+  ]
+}

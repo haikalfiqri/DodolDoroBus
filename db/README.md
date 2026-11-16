@@ -2,14 +2,15 @@
 
 Owner: Akip
 
-Schema based on ERD v3 (see `docs/progress_v3.md`, section 11).
+Schema v4: see [`docs/design/data_model.md`](../docs/design/data_model.md). v3 is in `docs/archive/progress_v3.md`.
 
 | Zone | Tables |
 |---|---|
-| Story & content | `story_chapters`, `story_stages`, `question_categories`, `questions` |
-| Spirit | `spirits`, `skills`, `spirit_skills` |
-| Battle | `battle_rooms`, `battle_participants`, `battle_turns`, `stage_progress` |
+| Story & content | `story_chapters`, `story_stages`, `stage_dialogue`, `question_categories`, `mission_types`, `questions` |
+| Pets & eggs | `rarities`, `pet_species`, `skills`, `pets`, `pet_skills`, `eggs`, `egg_drop_rates` |
+| Battle | `battles`, `battle_turns`, `stage_progress`, `stage_records`, `friendships`, `weekly_trials`, `trial_scores` |
 | Economy | `students`, `reward_mail`, `cell_ledger`, `shop_items`, `student_items`, `student_daily_limits` |
+| Quests | `quests`, `student_quests`, `quest_stamps`, `achievements`, `student_achievements` |
 | Admin | `game_config`, `question_reports` |
 
 ## Suggested layout
@@ -18,7 +19,7 @@ Schema based on ERD v3 (see `docs/progress_v3.md`, section 11).
 db/
 ├── schema.sql        # CREATE TABLE statements
 ├── migrations/       # changes after the first version
-└── seed/             # Chapter 1 stages, categories, first 50 questions
+└── seed/             # loads content/*.json, content/egg_drop_rates.csv and questions/*.csv
 ```
 
 ## Setup

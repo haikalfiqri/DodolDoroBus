@@ -1,0 +1,114 @@
+{
+  "daily_quests_pool": [
+    {
+      "id": "feed_pet",
+      "text_ko": "펫에게 먹이 주기",
+      "target": 1
+    },
+    {
+      "id": "clear_stage",
+      "text_ko": "스테이지 1개 클리어",
+      "target": 1
+    },
+    {
+      "id": "correct_any_5",
+      "text_ko": "정답 5개 맞히기",
+      "target": 5
+    },
+    {
+      "id": "correct_digital_5",
+      "text_ko": "디지털 정답 5개",
+      "target": 5
+    },
+    {
+      "id": "correct_ai_5",
+      "text_ko": "AI 정답 5개",
+      "target": 5
+    },
+    {
+      "id": "correct_making_5",
+      "text_ko": "메이킹 정답 5개",
+      "target": 5
+    },
+    {
+      "id": "correct_computing_5",
+      "text_ko": "컴퓨팅 정답 5개",
+      "target": 5
+    },
+    {
+      "id": "three_star",
+      "text_ko": "★★★ 클리어 1번",
+      "target": 1
+    },
+    {
+      "id": "weekly_trial",
+      "text_ko": "주간 시험 1번 도전",
+      "target": 1,
+      "requires": "battle_room"
+    }
+  ],
+  "daily": {
+    "quests_per_day": 3,
+    "cells_per_quest": 3,
+    "stamp_when_all_done": 1
+  },
+  "weekly_egg": {
+    "stamps_needed": 5,
+    "rarity_by_progress": [
+      {
+        "until": "clear c1 boss",
+        "rarity": "common"
+      },
+      {
+        "until": "clear c3 boss",
+        "rarity": "uncommon"
+      },
+      {
+        "after": "clear c3 boss",
+        "rarity": "rare"
+      }
+    ]
+  },
+  "achievements": [
+    {
+      "id": "c1_all_three_star",
+      "text": "Chapter 1, every stage ★★★",
+      "reward_egg": "epic"
+    },
+    {
+      "id": "dimc_50_each",
+      "text": "50 correct answers in all 4 DIMC categories",
+      "reward_egg": "rare"
+    },
+    {
+      "id": "set_common",
+      "text": "Own all 3 Common pets",
+      "reward_egg": "uncommon"
+    },
+    {
+      "id": "set_uncommon",
+      "text": "Own all 3 Uncommon pets",
+      "reward_egg": "rare"
+    },
+    {
+      "id": "set_rare",
+      "text": "Own all 3 Rare pets",
+      "reward_egg": "epic"
+    },
+    {
+      "id": "all_bosses_three_star",
+      "text": "All 5 bosses ★★★",
+      "reward_egg": "epic"
+    },
+    {
+      "id": "story_complete",
+      "text": "Clear chapter 5 boss",
+      "reward_title": "코덱스의 인정"
+    },
+    {
+      "id": "dex_complete",
+      "text": "도감 15 / 15",
+      "reward_title": "도로랜드 사육사"
+    }
+  ]
+}

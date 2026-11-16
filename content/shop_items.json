@@ -1,0 +1,55 @@
+{
+  "notes": "Fixed prices only. Eggs are never sold. Prices are placeholders for game_config tuning.",
+  "items": [
+    {
+      "id": "pet_food",
+      "name_ko": "펫 먹이",
+      "kind": "consumable",
+      "price": 5,
+      "effect": "+10 % XP today (1 per day); mood to sky blue"
+    },
+    {
+      "id": "rico_hint",
+      "name_ko": "리코의 분석",
+      "kind": "battle",
+      "price": 3,
+      "effect": "remove one wrong choice; max 1 per battle"
+    },
+    {
+      "id": "bg_safari",
+      "name_ko": "사파리 배경",
+      "kind": "room_background",
+      "price": 40
+    },
+    {
+      "id": "bg_night_sky",
+      "name_ko": "밤하늘 배경",
+      "kind": "room_background",
+      "price": 60
+    },
+    {
+      "id": "pet_bed",
+      "name_ko": "푹신한 펫 침대",
+      "kind": "room_furniture",
+      "price": 30
+    },
+    {
+      "id": "toy_ball",
+      "name_ko": "공 장난감",
+      "kind": "room_furniture",
+      "price": 15
+    },
+    {
+      "id": "scarf_star",
+      "name_ko": "별 스카프",
+      "kind": "pet_accessory",
+      "price": 25
+    },
+    {
+      "id": "battle_bg_cave",
+      "name_ko": "동굴 전투 배경",
+      "kind": "battle_background",
+      "price": 50
+    }
+  ]
+}
