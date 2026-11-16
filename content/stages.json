@@ -1,0 +1,253 @@
+{
+  "notes": "Chapter 1 only. Chapters 2-5 follow the same shape: 6 stages + boss, egg slots at stage 3, stage 6 and boss. map_position_percent is left for the front end.",
+  "stages": [
+    {
+      "id": "c1s1",
+      "chapter": 1,
+      "order": 1,
+      "is_boss": false,
+      "name_ko": "광장의 새싹",
+      "name_en": "Sprout in the Plaza",
+      "anomaly_ko": "지지직 노이즈",
+      "anomaly_en": "Static Noise",
+      "gauge": 40,
+      "max_rounds": 4,
+      "categories": [
+        "digital",
+        "ai",
+        "making",
+        "computing"
+      ],
+      "mission_types": [
+        "choice4",
+        "ox"
+      ],
+      "difficulty": "easy",
+      "egg_slot": null,
+      "first_clear_egg": "common",
+      "first_clear_cells_by_stars": [
+        5,
+        10,
+        15
+      ],
+      "unlocks": [
+        "my_room",
+        "mailbox",
+        "shop",
+        "feeding"
+      ],
+      "dialogue": "dialogue/ch1.json#c1s1",
+      "enemy_sprite": "anomaly_c1s1.png",
+      "map_position_percent": null
+    },
+    {
+      "id": "c1s2",
+      "chapter": 1,
+      "order": 2,
+      "is_boss": false,
+      "name_ko": "흩어진 지도",
+      "name_en": "The Scattered Map",
+      "anomaly_ko": "회오리 바람",
+      "anomaly_en": "Whirlwind",
+      "gauge": 50,
+      "max_rounds": 4,
+      "categories": [
+        "digital"
+      ],
+      "mission_types": [
+        "choice4",
+        "ox"
+      ],
+      "difficulty": "easy",
+      "egg_slot": null,
+      "first_clear_egg": null,
+      "first_clear_cells_by_stars": [
+        5,
+        10,
+        15
+      ],
+      "unlocks": [
+        "daily_quests",
+        "rico_hint"
+      ],
+      "dialogue": "dialogue/ch1.json#c1s2",
+      "enemy_sprite": "anomaly_c1s2.png",
+      "map_position_percent": null
+    },
+    {
+      "id": "c1s3",
+      "chapter": 1,
+      "order": 3,
+      "is_boss": false,
+      "name_ko": "로봇 키트",
+      "name_en": "The Robot Kit",
+      "anomaly_ko": "엉킨 톱니",
+      "anomaly_en": "Tangled Gears",
+      "gauge": 60,
+      "max_rounds": 4,
+      "categories": [
+        "making"
+      ],
+      "mission_types": [
+        "choice4",
+        "ox",
+        "order"
+      ],
+      "difficulty": "easy",
+      "egg_slot": "stage3",
+      "first_clear_egg": "common",
+      "first_clear_cells_by_stars": [
+        5,
+        10,
+        15
+      ],
+      "unlocks": [
+        "nest",
+        "hatch_by_answers"
+      ],
+      "dialogue": "dialogue/ch1.json#c1s3",
+      "enemy_sprite": "anomaly_c1s3.png",
+      "map_position_percent": null
+    },
+    {
+      "id": "c1s4",
+      "chapter": 1,
+      "order": 4,
+      "is_boss": false,
+      "name_ko": "운전면허 시험",
+      "name_en": "The Driving Test",
+      "anomaly_ko": "오작동하는 도로 코스",
+      "anomaly_en": "Glitching Road Course",
+      "gauge": 60,
+      "max_rounds": 4,
+      "categories": [
+        "computing"
+      ],
+      "mission_types": [
+        "command_order",
+        "choice4"
+      ],
+      "difficulty": "normal",
+      "egg_slot": null,
+      "first_clear_egg": null,
+      "first_clear_cells_by_stars": [
+        5,
+        10,
+        15
+      ],
+      "unlocks": [
+        "command_order_missions"
+      ],
+      "dialogue": "dialogue/ch1.json#c1s4",
+      "enemy_sprite": "anomaly_c1s4.png",
+      "map_position_percent": null
+    },
+    {
+      "id": "c1s5",
+      "chapter": 1,
+      "order": 5,
+      "is_boss": false,
+      "name_ko": "고장 난 전광판",
+      "name_en": "The Broken Billboard",
+      "anomaly_ko": "깜빡이 글리치",
+      "anomaly_en": "Blinking Glitch",
+      "gauge": 70,
+      "max_rounds": 4,
+      "categories": [
+        "computing",
+        "digital"
+      ],
+      "mission_types": [
+        "order",
+        "choice4",
+        "pixel_art"
+      ],
+      "difficulty": "normal",
+      "egg_slot": null,
+      "first_clear_egg": null,
+      "first_clear_cells_by_stars": [
+        5,
+        10,
+        15
+      ],
+      "unlocks": [],
+      "dialogue": "dialogue/ch1.json#c1s5",
+      "enemy_sprite": "anomaly_c1s5.png",
+      "map_position_percent": null
+    },
+    {
+      "id": "c1s6",
+      "chapter": 1,
+      "order": 6,
+      "is_boss": false,
+      "name_ko": "사라진 동물들",
+      "name_en": "The Vanished Animals",
+      "anomaly_ko": "흐릿한 발자국",
+      "anomaly_en": "Faded Footprints",
+      "gauge": 80,
+      "max_rounds": 4,
+      "categories": [
+        "ai"
+      ],
+      "mission_types": [
+        "choice4",
+        "ox",
+        "puzzle"
+      ],
+      "difficulty": "normal",
+      "egg_slot": "stage6",
+      "first_clear_egg": "uncommon",
+      "first_clear_cells_by_stars": [
+        5,
+        10,
+        15
+      ],
+      "unlocks": [
+        "egg_replay_drops"
+      ],
+      "dialogue": "dialogue/ch1.json#c1s6",
+      "enemy_sprite": "anomaly_c1s6.png",
+      "map_position_percent": null
+    },
+    {
+      "id": "c1s7",
+      "chapter": 1,
+      "order": 7,
+      "is_boss": true,
+      "name_ko": "사파리 동굴",
+      "name_en": "The Safari Cave",
+      "anomaly_ko": "뿔 달린 그림자",
+      "anomaly_en": "Horned Shadow",
+      "gauge": 100,
+      "max_rounds": 6,
+      "categories": [
+        "digital",
+        "ai",
+        "making",
+        "computing"
+      ],
+      "mission_types": [
+        "choice4",
+        "ox",
+        "order",
+        "command_order"
+      ],
+      "difficulty": "hard",
+      "egg_slot": "boss",
+      "first_clear_egg": "rare",
+      "first_clear_cells_by_stars": [
+        20,
+        20,
+        20
+      ],
+      "unlocks": [
+        "battle_room",
+        "nest_slot_2",
+        "chapter_2"
+      ],
+      "dialogue": "dialogue/ch1.json#c1s7",
+      "enemy_sprite": "boss_horned_shadow.png",
+      "map_position_percent": null
+    }
+  ]
+}

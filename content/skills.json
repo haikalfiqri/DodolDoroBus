@@ -1,0 +1,164 @@
+{
+  "power_by_level": [
+    {
+      "from_level": 1,
+      "power": 20
+    },
+    {
+      "from_level": 3,
+      "power": 25
+    },
+    {
+      "from_level": 7,
+      "power": 30
+    }
+  ],
+  "type_match_bonus": 0.2,
+  "rules": "Every pet starts with the 4 basic skills (one per DIMC category). At Lv 5 the pet's signature skill replaces the basic skill of the pet's own category. Base power is the same for every pet; a skill whose category matches the pet's type gets +20 % power.",
+  "skills": [
+    {
+      "id": "pixel_shield",
+      "name_ko": "픽셀 실드",
+      "category": "digital",
+      "kind": "basic"
+    },
+    {
+      "id": "pattern_scan",
+      "name_ko": "패턴 스캔",
+      "category": "ai",
+      "kind": "basic"
+    },
+    {
+      "id": "gear_hammer",
+      "name_ko": "기어 해머",
+      "category": "making",
+      "kind": "basic"
+    },
+    {
+      "id": "code_wave",
+      "name_ko": "코드 웨이브",
+      "category": "computing",
+      "kind": "basic"
+    },
+    {
+      "id": "sniff_trace",
+      "name_ko": "킁킁 추적",
+      "name_en": "Sniff Trace",
+      "category": "computing",
+      "kind": "signature",
+      "pet": "dog"
+    },
+    {
+      "id": "pixel_paw",
+      "name_ko": "픽셀 냥펀치",
+      "name_en": "Pixel Paw",
+      "category": "digital",
+      "kind": "signature",
+      "pet": "cat"
+    },
+    {
+      "id": "carrot_drill",
+      "name_ko": "당근 드릴",
+      "name_en": "Carrot Drill",
+      "category": "making",
+      "kind": "signature",
+      "pet": "rabbit"
+    },
+    {
+      "id": "tail_forecast",
+      "name_ko": "꼬리 예측",
+      "name_en": "Tail Forecast",
+      "category": "ai",
+      "kind": "signature",
+      "pet": "fox"
+    },
+    {
+      "id": "lineup_march",
+      "name_ko": "줄서기 행진",
+      "name_en": "Line-up March",
+      "category": "computing",
+      "kind": "signature",
+      "pet": "penguin"
+    },
+    {
+      "id": "bamboo_workshop",
+      "name_ko": "대나무 공방",
+      "name_en": "Bamboo Workshop",
+      "category": "making",
+      "kind": "signature",
+      "pet": "red_panda"
+    },
+    {
+      "id": "pack_algorithm",
+      "name_ko": "무리 알고리즘",
+      "name_en": "Pack Algorithm",
+      "category": "computing",
+      "kind": "signature",
+      "pet": "wolf"
+    },
+    {
+      "id": "mono_filter",
+      "name_ko": "흑백 필터",
+      "name_en": "Mono Filter",
+      "category": "digital",
+      "kind": "signature",
+      "pet": "panda"
+    },
+    {
+      "id": "hawk_scan",
+      "name_ko": "매의 눈",
+      "name_en": "Hawk Scan",
+      "category": "ai",
+      "kind": "signature",
+      "pet": "eagle"
+    },
+    {
+      "id": "roar_hammer",
+      "name_ko": "포효 해머",
+      "name_en": "Roar Hammer",
+      "category": "making",
+      "kind": "signature",
+      "pet": "lion"
+    },
+    {
+      "id": "stripe_code",
+      "name_ko": "호랑이 줄무늬 코드",
+      "name_en": "Stripe Code",
+      "category": "digital",
+      "kind": "signature",
+      "pet": "tiger"
+    },
+    {
+      "id": "snowfield_insight",
+      "name_ko": "설원 분석",
+      "name_en": "Snowfield Insight",
+      "category": "ai",
+      "kind": "signature",
+      "pet": "snow_leopard"
+    },
+    {
+      "id": "fair_verdict",
+      "name_ko": "정의의 판정",
+      "name_en": "Fair Verdict",
+      "category": "computing",
+      "kind": "signature",
+      "pet": "haechi"
+    },
+    {
+      "id": "ember_forge",
+      "name_ko": "불꽃 대장간",
+      "name_en": "Ember Forge",
+      "category": "making",
+      "kind": "signature",
+      "pet": "bonghwang"
+    },
+    {
+      "id": "cloud_network",
+      "name_ko": "구름 신경망",
+      "name_en": "Cloud Network",
+      "category": "ai",
+      "kind": "signature",
+      "pet": "blue_dragon"
+    }
+  ]
+}

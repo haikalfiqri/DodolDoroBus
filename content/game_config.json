@@ -1,0 +1,75 @@
+{
+  "battle": {
+    "pet_energy": 100,
+    "turns_per_round": 2,
+    "anomaly_hit_damage": 15,
+    "boss_hit_damage": 20,
+    "combo_per_dodge": 0.2,
+    "combo_max": 2.0,
+    "stars": {
+      "one": "cleared",
+      "two": "energy >= 50",
+      "three": "energy >= 80"
+    }
+  },
+  "xp": {
+    "stage_clear": "30 + 10 * stars",
+    "boss_clear": 100,
+    "fail": 10,
+    "level_up_cost": "50 * current_level",
+    "max_level": 10,
+    "food_bonus": 0.1,
+    "battle_xp_goes_to": "partner only"
+  },
+  "cells": {
+    "stage_by_stars": [
+      5,
+      10,
+      15
+    ],
+    "boss": 20,
+    "first_clear_of_day_bonus": 5,
+    "ghost_win": 10,
+    "ghost_loss": 3,
+    "daily_quest": 3
+  },
+  "limits": {
+    "rewarded_battles_per_day": 10,
+    "cells_per_day": 60,
+    "rewarded_ghost_per_friend_per_day": 2
+  },
+  "eggs": {
+    "replay_roll_min_stars": 2,
+    "rolls_only_on_rewarded_clears": true,
+    "mythic_pity_boss_clears": 50,
+    "nest_slots_start": 1,
+    "nest_slots_after_c1": 2,
+    "egg_box_max": 10,
+    "duplicate_becomes": {
+      "item": "snack_pack",
+      "xp": 100
+    },
+    "starter_egg_taps": 3
+  },
+  "mood": {
+    "colours": {
+      "calm": "#7DD3FC",
+      "curious": "#86EFAC",
+      "tense": "#FDE047",
+      "sad": "#C4B5FD",
+      "harmony": "#FFFFFF"
+    },
+    "rules": [
+      "fed today and played recently -> calm (harmony after a 3-star clear)",
+      "new stage unlocked -> curious",
+      "in battle -> tense",
+      "not fed 2+ days -> sad",
+      "red is reserved for anomalies"
+    ]
+  },
+  "weekly_trial": {
+    "questions": 8,
+    "score": "correct * 100 + time bonus + combo bonus",
+    "reset": "Monday 00:00 KST"
+  }
+}

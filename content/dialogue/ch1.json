@@ -1,0 +1,86 @@
+{
+  "notes": "Chapter 1 lines. Each stage has intro (before battle), win and lose lines. speaker = characters.json id. {pet} = the partner's name, {player} = the student's nickname. Draft text: the planning team can edit freely.",
+  "onboarding": [
+    {"step": "letter", "speaker": "codex", "text": "신입 대원 {player}에게.\n요즘 도로랜드 곳곳에 이상 현상이 나타나고 있다.\n광장에서 네이티가 너를 기다리고 있다. 나의 시험을 통과해 봐라.\n— 코덱스", "button": "초대 받기"},
+    {"step": "egg", "speaker": "naty", "text": "안녕, 나는 네이티야! 코덱스가 너에게 이 알을 맡겼어. 톡톡 세 번 두드려 봐!"},
+    {"step": "egg_tap", "speaker": "naty", "text": "조금만 더! ({taps} / 3)"},
+    {"step": "hatched", "speaker": "naty", "text": "우와, 태어났다! 오늘부터 너의 파트너야."},
+    {"step": "name", "speaker": "naty", "text": "이름을 지어 줄래? (최대 8글자)", "button": "이 이름으로 할래요"},
+    {"step": "mood", "speaker": "naty", "text": "{pet}의 목걸이 색은 기분이야! 지금 초록색은 \"궁금해요\".\n먹이를 주면 하늘색, 오래 굶으면 보라색이 돼. 그래도 절대 아프거나 레벨이 내려가지 않아.\n이제 코덱스가 보낸 이상 현상을 잠재우러 가자!", "button": "1장 지도 열기"}
+  ],
+  "stages": {
+    "c1s1": {
+      "intro": [
+        {"speaker": "codex", "text": "도로랜드 광장에 첫 이상 현상이 나타났다.\n신입 대원, 펫과 함께 잠재워 봐라."},
+        {"speaker": "naty", "text": "스킬을 고르고 문제를 맞히면 게이지가 줄어! 상대가 공격하면 문제를 맞혀서 피하면 돼."}
+      ],
+      "win": [{"speaker": "naty", "text": "해냈어! 보상은 우편함에 도착했어. 열어서 셀을 받아 봐!"}],
+      "lose": [{"speaker": "naty", "text": "괜찮아, 처음엔 다 그래. 다시 도전해 보자!"}]
+    },
+    "c1s2": {
+      "intro": [
+        {"speaker": "codex", "text": "바람이 사파리 지도를 다 흩어 놓았다.\n픽셀 실드로 막아 낼 수 있겠나?"},
+        {"speaker": "rico", "text": "막히면 나를 불러. 틀린 답 하나는 지워 줄게. (3셀)"}
+      ],
+      "win": [{"speaker": "naty", "text": "지도 조각을 다 모았어! 오늘의 퀘스트도 열렸어."}],
+      "lose": [{"speaker": "naty", "text": "바람이 너무 셌네. 리코의 힌트를 써 봐!"}]
+    },
+    "c1s3": {
+      "intro": [
+        {"speaker": "codex", "text": "로봇 키트 부품이 꽉 막혀 버렸다.\n기어 해머가 필요할 거다."},
+        {"speaker": "naty", "text": "어? 톱니 사이에서 뭔가 반짝여!"}
+      ],
+      "win": [
+        {"speaker": "naty", "text": "알이다! 이상 현상이 알을 품고 있었어. 마이룸 둥지에 넣어 두자."},
+        {"speaker": "naty", "text": "문제를 맞힐 때마다 알이 따뜻해져. 5번 맞히면 태어날 거야!"}
+      ],
+      "lose": [{"speaker": "naty", "text": "메이킹 타입 펫이 있으면 기어 해머가 더 세져!"}]
+    },
+    "c1s4": {
+      "intro": [
+        {"speaker": "zero", "text": "운전면허 시험 시작! 코스가 4개야. 그런데… 코스가 제멋대로 바뀌고 있어."},
+        {"speaker": "codex", "text": "시험 코스가 제멋대로 바뀌고 있다!\n명령 순서를 바로잡아 봐라."}
+      ],
+      "win": [{"speaker": "zero", "text": "합격! 명령 블록을 순서대로 놓는 법, 이제 알겠지?"}],
+      "lose": [{"speaker": "zero", "text": "순서를 하나씩 따라가 봐. 앞으로, 돌기, 멈춤!"}]
+    },
+    "c1s5": {
+      "intro": [
+        {"speaker": "codex", "text": "전광판 글자가 뒤죽박죽이다.\n침착하게 순서를 찾아라."},
+        {"speaker": "xylo", "text": "도트 하나하나가 픽셀이야. 그림을 맞추면 다시 켜질 거야."}
+      ],
+      "win": [{"speaker": "xylo", "text": "전광판이 돌아왔어! 상점에 새 물건도 들여 놨어."}],
+      "lose": [{"speaker": "xylo", "text": "줄마다 천천히 세어 봐. 급하면 더 헷갈려."}]
+    },
+    "c1s6": {
+      "intro": [
+        {"speaker": "naty", "text": "사파리 동물들이 하나도 없어… 이끼 낀 창고에 발자국만 남았어."},
+        {"speaker": "codex", "text": "동물들이 사라졌다.\n남은 발자국의 패턴을 읽어 봐라."}
+      ],
+      "win": [
+        {"speaker": "naty", "text": "알았다! 코덱스가 동물들의 알을 이상 현상 속에 숨겨 둔 거야."},
+        {"speaker": "naty", "text": "이미 깬 스테이지도 다시 하면 알이 나올 수 있어. 드롭 확률은 스테이지 카드에서 볼 수 있어!"}
+      ],
+      "lose": [{"speaker": "naty", "text": "AI 문제는 패턴을 찾는 게 핵심이야. 다시 해 보자!"}]
+    },
+    "c1s7": {
+      "intro": [
+        {"speaker": "naty", "text": "동굴 안에서 빨간 눈이 보여… 갇힌 동물들이 저 안에 있어!"},
+        {"speaker": "codex", "text": "여기까지 왔구나. 1장의 마지막 시험이다.\n동굴의 그림자를 잠재워 봐라!"}
+      ],
+      "win": [
+        {"speaker": "naty", "text": "동물들이 풀려났어! 그리고… 반짝이는 회로알이야!"},
+        {"speaker": "codex", "text": "약속을 지키는 인간이 아직 있었군. 다음 시험은 하모니아에서 기다리겠다."},
+        {"speaker": "naty", "text": "배틀룸이 열렸어! 이제 다른 신입사원들과 실력을 겨뤄볼 시간이야!"}
+      ],
+      "lose": [{"speaker": "naty", "text": "보스는 강해. 6스테이지를 다시 하면서 펫을 키우고 오자!"}]
+    }
+  },
+  "system": {
+    "take_a_break": {"speaker": "naty", "text": "오늘 정말 많이 했어! 이제 쉬었다가 내일 또 만나자. (오늘 보상은 모두 받았어)"},
+    "egg_hatch_ready": {"speaker": "naty", "text": "알이 흔들려! 마이룸에서 눌러 봐!"},
+    "pet_hungry": {"speaker": "zero", "text": "{pet}가 배고파 보여. 먹이를 주면 기분이 좋아질 거야."},
+    "duplicate_snack": {"speaker": "naty", "text": "이 친구는 이미 있어서 간식 꾸러미로 바뀌었어! (+100 XP)"},
+    "mythic_pity": {"speaker": "codex", "text": "끈기 있는 대원이군. 나의 수호자를 맡기겠다."}
+  }
+}

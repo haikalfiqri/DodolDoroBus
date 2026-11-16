@@ -1,0 +1,46 @@
+{
+  "characters": [
+    {
+      "id": "codex",
+      "name_ko": "코덱스",
+      "name_en": "Codex",
+      "kind": "spirit",
+      "role": "Guardian spirit of DOROLAND. Sends the anomalies and chapter bosses. Mythic eggs are his own guardians."
+    },
+    {
+      "id": "naty",
+      "name_ko": "네이티",
+      "name_en": "Naty",
+      "kind": "spirit",
+      "role": "Codex's companion spirit. Tutorial guide; hands the student the starter egg. Never a player's pet."
+    },
+    {
+      "id": "rico",
+      "name_ko": "리코",
+      "name_en": "Rico",
+      "kind": "human",
+      "role": "Hint: '리코의 분석' removes one wrong choice (max 1 per battle, 3 cells)."
+    },
+    {
+      "id": "zero",
+      "name_ko": "제로",
+      "name_en": "Zero",
+      "kind": "human",
+      "role": "Pet care: reads the pet's mood, feeding."
+    },
+    {
+      "id": "xylo",
+      "name_ko": "자일로",
+      "name_en": "Xylo",
+      "kind": "human",
+      "role": "Shop: food, My Room decorations, backgrounds."
+    },
+    {
+      "id": "void",
+      "name_ko": "보이드",
+      "name_en": "Void",
+      "kind": "robot",
+      "role": "Weekly growth report: accuracy per DIMC category."
+    }
+  ]
+}

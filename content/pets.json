@@ -1,0 +1,313 @@
+{
+  "forms": [
+    {
+      "id": "baby",
+      "name_ko": "아기",
+      "levels": [
+        1,
+        3
+      ]
+    },
+    {
+      "id": "junior",
+      "name_ko": "꼬마",
+      "levels": [
+        4,
+        6
+      ],
+      "visual": "bigger body + rarity-coloured scarf"
+    },
+    {
+      "id": "adult",
+      "name_ko": "어른",
+      "levels": [
+        7,
+        9
+      ],
+      "visual": "full size, final pose, type badge"
+    },
+    {
+      "id": "shining",
+      "name_ko": "빛나는",
+      "levels": [
+        10,
+        10
+      ],
+      "visual": "adult + rarity-colour aura"
+    }
+  ],
+  "art_rule": "All 4 forms are drawn for all 15 pets in frontend/public/art/: baby (Lv 1-3), junior (Lv 4-6: baby scaled up + rarity scarf + brows), adult (Lv 7-9 battle pose), shining (Lv 10: adult + rarity aura + glowing rim). Regenerate with tools/pet_art (build.py, build_baby.py).",
+  "pets": [
+    {
+      "id": "dog",
+      "rarity": "common",
+      "name_ko": "강아지",
+      "name_en": "Dog",
+      "type": "computing",
+      "signature_skill": "sniff_trace",
+      "passive_code": null,
+      "passive": null,
+      "sprites": {
+        "baby": "art/pet_dog_baby.svg",
+        "junior": "art/pet_dog_junior.svg",
+        "adult": "art/pet_dog_adult.svg",
+        "shining": "art/pet_dog_shining.svg",
+        "shining_anim": "art/pet_dog_shining_anim.svg"
+      },
+      "in_final_build": true
+    },
+    {
+      "id": "cat",
+      "rarity": "common",
+      "name_ko": "고양이",
+      "name_en": "Cat",
+      "type": "digital",
+      "signature_skill": "pixel_paw",
+      "passive_code": null,
+      "passive": null,
+      "sprites": {
+        "baby": "art/pet_cat_baby.svg",
+        "junior": "art/pet_cat_junior.svg",
+        "adult": "art/pet_cat_adult.svg",
+        "shining": "art/pet_cat_shining.svg",
+        "shining_anim": "art/pet_cat_shining_anim.svg"
+      },
+      "in_final_build": true
+    },
+    {
+      "id": "rabbit",
+      "rarity": "common",
+      "name_ko": "토끼",
+      "name_en": "Rabbit",
+      "type": "making",
+      "signature_skill": "carrot_drill",
+      "passive_code": null,
+      "passive": null,
+      "sprites": {
+        "baby": "art/pet_rabbit_baby.svg",
+        "junior": "art/pet_rabbit_junior.svg",
+        "adult": "art/pet_rabbit_adult.svg",
+        "shining": "art/pet_rabbit_shining.svg",
+        "shining_anim": "art/pet_rabbit_shining_anim.svg"
+      },
+      "in_final_build": true
+    },
+    {
+      "id": "fox",
+      "rarity": "uncommon",
+      "name_ko": "여우",
+      "name_en": "Fox",
+      "type": "ai",
+      "signature_skill": "tail_forecast",
+      "passive_code": "combo_start_1_2",
+      "passive": "영리한 꼬리: combo starts at x1.2",
+      "sprites": {
+        "baby": "art/pet_fox_baby.svg",
+        "junior": "art/pet_fox_junior.svg",
+        "adult": "art/pet_fox_adult.svg",
+        "shining": "art/pet_fox_shining.svg",
+        "shining_anim": "art/pet_fox_shining_anim.svg"
+      },
+      "in_final_build": true
+    },
+    {
+      "id": "penguin",
+      "rarity": "uncommon",
+      "name_ko": "펭귄",
+      "name_en": "Penguin",
+      "type": "computing",
+      "signature_skill": "lineup_march",
+      "passive_code": "order_time_plus_5",
+      "passive": "차례차례: ordering questions get +5 s",
+      "sprites": {
+        "baby": "art/pet_penguin_baby.svg",
+        "junior": "art/pet_penguin_junior.svg",
+        "adult": "art/pet_penguin_adult.svg",
+        "shining": "art/pet_penguin_shining.svg",
+        "shining_anim": "art/pet_penguin_shining_anim.svg"
+      },
+      "in_final_build": true
+    },
+    {
+      "id": "red_panda",
+      "rarity": "uncommon",
+      "name_ko": "레서판다",
+      "name_en": "Red Panda",
+      "type": "making",
+      "signature_skill": "bamboo_workshop",
+      "passive_code": "food_xp_15",
+      "passive": "든든한 간식: food gives +15 % XP instead of +10 %",
+      "sprites": {
+        "baby": "art/pet_red_panda_baby.svg",
+        "junior": "art/pet_red_panda_junior.svg",
+        "adult": "art/pet_red_panda_adult.svg",
+        "shining": "art/pet_red_panda_shining.svg",
+        "shining_anim": "art/pet_red_panda_shining_anim.svg"
+      },
+      "in_final_build": true
+    },
+    {
+      "id": "wolf",
+      "rarity": "rare",
+      "name_ko": "늑대",
+      "name_en": "Wolf",
+      "type": "computing",
+      "signature_skill": "pack_algorithm",
+      "passive_code": "dodge_combo_0_3",
+      "passive": "무리의 힘: a dodge adds +0.3 combo instead of +0.2",
+      "sprites": {
+        "baby": "art/pet_wolf_baby.svg",
+        "junior": "art/pet_wolf_junior.svg",
+        "adult": "art/pet_wolf_adult.svg",
+        "shining": "art/pet_wolf_shining.svg",
+        "shining_anim": "art/pet_wolf_shining_anim.svg"
+      },
+      "in_final_build": true
+    },
+    {
+      "id": "panda",
+      "rarity": "rare",
+      "name_ko": "판다",
+      "name_en": "Panda",
+      "type": "digital",
+      "signature_skill": "mono_filter",
+      "passive_code": "first_miss_half",
+      "passive": "느긋함: first wrong answer per battle costs half energy",
+      "sprites": {
+        "baby": "art/pet_panda_baby.svg",
+        "junior": "art/pet_panda_junior.svg",
+        "adult": "art/pet_panda_adult.svg",
+        "shining": "art/pet_panda_shining.svg",
+        "shining_anim": "art/pet_panda_shining_anim.svg"
+      },
+      "in_final_build": true
+    },
+    {
+      "id": "eagle",
+      "rarity": "rare",
+      "name_ko": "독수리",
+      "name_en": "Eagle",
+      "type": "ai",
+      "signature_skill": "hawk_scan",
+      "passive_code": "free_hint_daily",
+      "passive": "높은 시야: 1 free Rico's hint per day",
+      "sprites": {
+        "baby": "art/pet_eagle_baby.svg",
+        "junior": "art/pet_eagle_junior.svg",
+        "adult": "art/pet_eagle_adult.svg",
+        "shining": "art/pet_eagle_shining.svg",
+        "shining_anim": "art/pet_eagle_shining_anim.svg"
+      },
+      "in_final_build": true
+    },
+    {
+      "id": "lion",
+      "rarity": "epic",
+      "name_ko": "사자",
+      "name_en": "Lion",
+      "type": "making",
+      "signature_skill": "roar_hammer",
+      "passive_code": "first_skill_plus_30",
+      "passive": "왕의 포효: first skill each battle +30 % power",
+      "sprites": {
+        "baby": "art/pet_lion_baby.svg",
+        "junior": "art/pet_lion_junior.svg",
+        "adult": "art/pet_lion_adult.svg",
+        "shining": "art/pet_lion_shining.svg",
+        "shining_anim": "art/pet_lion_shining_anim.svg"
+      },
+      "in_final_build": false
+    },
+    {
+      "id": "tiger",
+      "rarity": "epic",
+      "name_ko": "호랑이",
+      "name_en": "Tiger",
+      "type": "digital",
+      "signature_skill": "stripe_code",
+      "passive_code": "start_energy_110",
+      "passive": "호랑이 기운: starts each battle with 110 energy",
+      "sprites": {
+        "baby": "art/pet_tiger_baby.svg",
+        "junior": "art/pet_tiger_junior.svg",
+        "adult": "art/pet_tiger_adult.svg",
+        "shining": "art/pet_tiger_shining.svg",
+        "shining_anim": "art/pet_tiger_shining_anim.svg"
+      },
+      "in_final_build": false
+    },
+    {
+      "id": "snow_leopard",
+      "rarity": "epic",
+      "name_ko": "눈표범",
+      "name_en": "Snow Leopard",
+      "type": "ai",
+      "signature_skill": "snowfield_insight",
+      "passive_code": "all_time_plus_5",
+      "passive": "설원의 집중: +5 s on every question",
+      "sprites": {
+        "baby": "art/pet_snow_leopard_baby.svg",
+        "junior": "art/pet_snow_leopard_junior.svg",
+        "adult": "art/pet_snow_leopard_adult.svg",
+        "shining": "art/pet_snow_leopard_shining.svg",
+        "shining_anim": "art/pet_snow_leopard_shining_anim.svg"
+      },
+      "in_final_build": false
+    },
+    {
+      "id": "haechi",
+      "rarity": "mythic",
+      "name_ko": "해치",
+      "name_en": "Haechi",
+      "type": "computing",
+      "signature_skill": "fair_verdict",
+      "passive_code": "dodge_save_once",
+      "passive": "Once per battle, a wrong dodge counts as correct",
+      "sprites": {
+        "baby": "art/pet_haechi_baby.svg",
+        "junior": "art/pet_haechi_junior.svg",
+        "adult": "art/pet_haechi_adult.svg",
+        "shining": "art/pet_haechi_shining.svg",
+        "shining_anim": "art/pet_haechi_shining_anim.svg"
+      },
+      "in_final_build": false
+    },
+    {
+      "id": "bonghwang",
+      "rarity": "mythic",
+      "name_ko": "봉황",
+      "name_en": "Bonghwang",
+      "type": "making",
+      "signature_skill": "ember_forge",
+      "passive_code": "revive_30_once",
+      "passive": "Once per battle, revives at 30 energy instead of 0",
+      "sprites": {
+        "baby": "art/pet_bonghwang_baby.svg",
+        "junior": "art/pet_bonghwang_junior.svg",
+        "adult": "art/pet_bonghwang_adult.svg",
+        "shining": "art/pet_bonghwang_shining.svg",
+        "shining_anim": "art/pet_bonghwang_shining_anim.svg"
+      },
+      "in_final_build": false
+    },
+    {
+      "id": "blue_dragon",
+      "rarity": "mythic",
+      "name_ko": "청룡",
+      "name_en": "Blue Dragon",
+      "type": "ai",
+      "signature_skill": "cloud_network",
+      "passive_code": "combo_double",
+      "passive": "Combo grows twice as fast",
+      "sprites": {
+        "baby": "art/pet_blue_dragon_baby.svg",
+        "junior": "art/pet_blue_dragon_junior.svg",
+        "adult": "art/pet_blue_dragon_adult.svg",
+        "shining": "art/pet_blue_dragon_shining.svg",
+        "shining_anim": "art/pet_blue_dragon_shining_anim.svg"
+      },
+      "in_final_build": false
+    }
+  ],
+  "animation": "shining_anim is the Lv 10 form with CSS animation built in (loops every 2.4 s, respects prefers-reduced-motion). Use it with <img src> on My Room, the pet card and the level-up result; the static shining.svg is the fallback."
+}

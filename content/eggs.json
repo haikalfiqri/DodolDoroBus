@@ -1,0 +1,60 @@
+{
+  "eggs": [
+    {
+      "rarity": "common",
+      "order": 1,
+      "name_ko": "새싹알",
+      "name_en": "Sprout Egg",
+      "colour": "#7BC67E",
+      "hatch_correct_needed": 5,
+      "look": "Cream shell with soft green speckles; a two-leaf sprout pokes out of the top",
+      "hatch_effect": "green puff",
+      "sprite": "egg_common.png"
+    },
+    {
+      "rarity": "uncommon",
+      "order": 2,
+      "name_ko": "물방울알",
+      "name_en": "Dewdrop Egg",
+      "colour": "#4FC3F7",
+      "hatch_correct_needed": 10,
+      "look": "Pale aqua shell with wavy water stripes; a glossy dewdrop shine on one side",
+      "hatch_effect": "splash of bubbles",
+      "sprite": "egg_uncommon.png"
+    },
+    {
+      "rarity": "rare",
+      "order": 3,
+      "name_ko": "회로알",
+      "name_en": "Circuit Egg",
+      "colour": "#3D5AFE",
+      "hatch_correct_needed": 20,
+      "look": "Deep navy shell traced with gold circuit lines that pulse like a heartbeat",
+      "hatch_effect": "circuit lines light up one by one",
+      "sprite": "egg_rare.png"
+    },
+    {
+      "rarity": "epic",
+      "order": 4,
+      "name_ko": "황금갈기알",
+      "name_en": "Sunmane Egg",
+      "colour": "#FFB300",
+      "hatch_correct_needed": 35,
+      "look": "Amber-gold shell with a flame-like mane pattern; warm light leaks from tiny cracks",
+      "hatch_effect": "sunburst rays",
+      "sprite": "egg_epic.png"
+    },
+    {
+      "rarity": "mythic",
+      "order": 5,
+      "name_ko": "코덱스의 알",
+      "name_en": "Codex Egg",
+      "colour": "#9C27B0",
+      "hatch_correct_needed": 50,
+      "look": "Iridescent shell shifting purple to teal; star-rune markings; a ring of floating light motes",
+      "hatch_effect": "constellation forms, then shatters into stars",
+      "sprite": "egg_mythic.png"
+    }
+  ],
+  "notes": "The starter egg (Naty, Day 1) is a common egg that hatches by 3 taps instead of correct answers."
+}

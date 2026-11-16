@@ -1,0 +1,89 @@
+{
+  "chapters": [
+    {
+      "id": 1,
+      "order": 1,
+      "name_ko": "신비한 초대, 사파리",
+      "name_en": "The Mysterious Invitation: Safari",
+      "place": "Safari",
+      "status": "playable",
+      "summary": "Recruits arrive; a storm, a robot kit, Zero's driving test and a broken billboard lead to the vanished animals and the Safari cave.",
+      "unlock": "start",
+      "boss_mythic_percent": 1,
+      "first_clear_eggs": {
+        "stage1": "common",
+        "stage3": "common",
+        "stage6": "uncommon",
+        "boss": "rare"
+      }
+    },
+    {
+      "id": 2,
+      "order": 2,
+      "name_ko": "멈춰버린 기계의 노래",
+      "name_en": "The Song of the Stopped Machine",
+      "place": "Harmonia",
+      "status": "planned",
+      "summary": "Harmonia's great music machine has stopped; recruits restart it step by step. Featured mission: command ordering (rhythm only if time remains).",
+      "unlock": "clear chapter 1 boss",
+      "boss_mythic_percent": 2,
+      "first_clear_eggs": {
+        "stage1": null,
+        "stage3": "uncommon",
+        "stage6": "rare",
+        "boss": "epic"
+      }
+    },
+    {
+      "id": 3,
+      "order": 3,
+      "name_ko": "잊혀진 시간 속으로",
+      "name_en": "Into Forgotten Time",
+      "place": "Carousel",
+      "status": "planned",
+      "summary": "The carousel spins memories out of order. Featured mission: pattern and sequence puzzles.",
+      "unlock": "clear chapter 2 boss",
+      "boss_mythic_percent": 3,
+      "first_clear_eggs": {
+        "stage1": null,
+        "stage3": "rare",
+        "stage6": "rare",
+        "boss": "epic"
+      }
+    },
+    {
+      "id": 4,
+      "order": 4,
+      "name_ko": "구름을 넘어 진실 속으로",
+      "name_en": "Beyond the Clouds, Into the Truth",
+      "place": "Ferris wheel",
+      "status": "planned",
+      "summary": "From the top of the Ferris wheel the park's hidden picture appears. Featured mission: pixel art.",
+      "unlock": "clear chapter 3 boss",
+      "boss_mythic_percent": 4,
+      "first_clear_eggs": {
+        "stage1": null,
+        "stage3": "rare",
+        "stage6": "rare",
+        "boss": "epic"
+      }
+    },
+    {
+      "id": 5,
+      "order": 5,
+      "name_ko": "코덱스의 선택",
+      "name_en": "Codex's Choice",
+      "place": "Codex's sanctuary",
+      "status": "planned",
+      "summary": "Codex's final trial: did the recruits keep their promise to nature? Ends with the title 코덱스의 인정.",
+      "unlock": "clear chapter 4 boss",
+      "boss_mythic_percent": 5,
+      "first_clear_eggs": {
+        "stage1": null,
+        "stage3": "rare",
+        "stage6": "epic",
+        "boss": "epic"
+      }
+    }
+  ]
+}
