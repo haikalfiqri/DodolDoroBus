@@ -1,38 +1,7 @@
-# Secrets
+node_modules/
+dist/
 .env
 .env.*
 !.env.example
-*.pem
-*.key
-
-# Dependencies
-node_modules/
-.venv/
-venv/
-__pycache__/
-*.pyc
-
-# Build output
-dist/
-build/
-out/
-.next/
-target/
+.vercel
 *.log
-
-# Database dumps and local data
-*.sqlite
-*.sqlite3
-*.dump
-pgdata/
-
-# Editor / OS
-.vscode/
-.idea/
-.DS_Store
-Thumbs.db
-
-# Large files (keep in shared drive)
-*.pptx
-*.mp4
-*.mov
