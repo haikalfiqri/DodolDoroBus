@@ -374,3 +374,26 @@ table.t tr.hidden td { color: var(--mute); }
   .room { height: 260px; }
   .room .rpet { width: 80px; height: 80px; }
 }
+
+/* ---- per-stage backgrounds (map hover swipe + battle scene) ---- */
+.bgstack { position: absolute; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; }
+.bgl { position: absolute; inset: 0; background-size: cover; background-position: center; box-shadow: inset 0 0 90px #0008; transition: transform .75s cubic-bezier(.22, .61, .36, 1); will-change: transform; backface-visibility: hidden; }
+.bgl.def { background: linear-gradient(#bfe3fb 0 30%, #c6ef9a 30%); box-shadow: none; }
+.smap .tree, .smap .cave, .smap .cloud { transition: opacity .4s; }
+.smap.hasbg .tree, .smap.hasbg .cave, .smap.hasbg .cloud { opacity: 0; }
+.smap.hasbg .path { filter: drop-shadow(0 0 2px #fff) drop-shadow(0 0 3px #fff); }
+.scene > .scene-bg { position: absolute; inset: 0; background-size: cover; background-position: center; box-shadow: inset 0 0 120px #0009; will-change: transform; backface-visibility: hidden; animation: bgin .9s cubic-bezier(.22, .61, .36, 1) both, bgdrift 24s ease-in-out .9s infinite alternate; }
+@keyframes bgin { from { transform: translateX(100%); } to { transform: none; } }
+@keyframes bgdrift { to { transform: scale(1.06); } }
+.scene.hasbg .plat { background: #3f6b1f66; border-color: #26441366; }
+.scene.hasbg .anomaly, .scene.hasbg .me { filter: drop-shadow(0 5px 0 #0004); }
+
+/* battle pictures with baked-in platforms: hide CSS ellipses, stand sprites on the drawn ones (image is 2.4:1, cover-fit) */
+.scene.hasbg.baked { --rw: max(100cqw, 240cqh); --rh: max(41.667cqw, 100cqh); }
+.scene.baked .plat { display: none; }
+.scene.baked .me { left: calc(50cqw - .26 * var(--rw)); top: calc(50cqh + .37 * var(--rh)); bottom: auto; width: calc(.24 * var(--rw)); height: calc(.52 * var(--rh)); translate: -50% -88%; }
+.scene.baked .anomaly { left: calc(50cqw + .26 * var(--rw)); right: auto; top: calc(50cqh + .05 * var(--rh)); width: calc(.17 * var(--rw)); height: calc(.38 * var(--rh)); translate: -50% -88%; }
+@media (max-width: 860px) {
+  .scene.baked .me { width: calc(.3 * var(--rw)); height: calc(.55 * var(--rh)); }
+  .scene.baked .anomaly { width: calc(.2 * var(--rw)); height: calc(.4 * var(--rh)); top: calc(50cqh + .05 * var(--rh)); }
+}

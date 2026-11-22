@@ -5,6 +5,7 @@ import { anomalySprite, CAT_ICON, CAT_KO, eggSprite, FORM_KO, petImg, RARITY_KO,
 import { getMe, go } from '../main'
 import skillsJson from '../../content/skills.json'
 import { sfx } from '../ui/sound'
+import { paintScene } from '../ui/stageBg'
 
 /**
  * Battle: startBattle -> [ useSkill -> answer (pet question) -> answer (anomaly dodge) ] x rounds -> finish.
@@ -40,6 +41,7 @@ export async function battleScreen(body: HTMLElement, params: Record<string, str
     </div>
     <div class="bottom" id="bottom"></div></div>`
   const scene = $('#scene', body), bottom = $('#bottom', body)
+  void paintScene(scene, stage.id)
 
   function panels(): void {
     const s = state
