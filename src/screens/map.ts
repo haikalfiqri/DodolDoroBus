@@ -3,6 +3,7 @@ import type { StageSummary } from '../types'
 import { esc, modal, closeModal, onAct, stars, toast } from '../ui/dom'
 import { anomalySprite, CAT_KO, eggSprite, RARITY_KO, treeSprite, TYPE_KO } from '../ui/sprites'
 import { getMe, go } from '../main'
+import { mapBgSwiper, preloadStageBgs } from '../ui/stageBg'
 
 const POS: Record<number, [number, number]> = { 1: [9, 76], 2: [25, 50], 3: [40, 76], 4: [54, 48], 5: [68, 74], 6: [82, 50], 7: [84, 18] }
 
@@ -31,10 +32,21 @@ export async function mapScreen(body: HTMLElement): Promise<void> {
       <div class="box soft"><h3>👁 코덱스의 호의</h3><p class="small">보스를 다시 깰 때마다 +1. 50이 되면 신화 알 확정!</p><div class="bar gauge"><i style="width:${me.mythicPity * 2}%"></i></div><p class="small center">${me.mythicPity} / 50</p></div>
       <div class="box soft"><h3>📚 다른 장</h3>${['2장 멈춰버린 기계의 노래', '3장 잊혀진 시간 속으로', '4장 구름 너머의 진실', '5장 코덱스의 선택'].map((c) => `<div class="small mute">🔒 ${c}</div>`).join('')}</div>
       <button class="btn out" data-act="hub">← 홈</button></aside></div>`
+  // background follows the stage under the cursor (swipes right -> left); starts on the stage you are up to
+  const smap = body.querySelector<HTMLElement>('.smap')!
+  const bg = mapBgSwiper(smap)
+  void bg.show((stages.find((s) => !s.locked && !s.firstCleared) ?? stages[0]).id, true)
+  preloadStageBgs(stages.map((s) => s.id))
+  let peekT = 0   // hover intent: sweeping the mouse across several nodes only swipes to the one you stop on
+  body.querySelectorAll<HTMLElement>('.node').forEach((n) => {
+    const peek = () => { clearTimeout(peekT); peekT = window.setTimeout(() => void bg.show(n.dataset.id!), 70) }
+    n.addEventListener('mouseenter', peek); n.addEventListener('focus', peek)
+  })
   onAct(body, {
     hub: () => go('hub'),
     stage: (el) => {
       const s = stages.find((x) => x.id === el.dataset.id)!
+      void bg.show(s.id)
       if (s.locked) { toast('앞 스테이지를 먼저 깨야 열려요'); return }
       openCard(s)
     },
