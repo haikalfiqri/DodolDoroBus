@@ -29,61 +29,80 @@ Every student joins DOROLAND as a **new recruit**. **Codex**, the guardian spiri
 | Frontend | [`docs/design/screens.md`](docs/design/screens.md), [`docs/prototype/`](docs/prototype/), [`content/`](content/) |
 | Story / art | [`docs/egg_pet_system_v4.md`](docs/egg_pet_system_v4.md), [`docs/player_journey.md`](docs/player_journey.md), [`docs/story/`](docs/story/) |
 
-## Scope for the final
+## What works now
 
-| Priority | Items |
+- **Login** for students and the admin (signed session cookie, scrypt password hashes), and sign-up for new students
+- **Onboarding:** Codex's letter → tap Naty's starter egg 3× → a pet hatches → name it → mood colours
+- **Chapter 1** (6 stages + boss) on a pixel map; stage cards show first-clear eggs and replay drop rates
+- **Battle engine on the server:** skill → mission → damage × combo; the anomaly's turn → dodge question; stars by energy left; 7 mission types; Rico's hint; pet passives
+- **Stage-clear transaction:** progress, unlocks, daily limits, reward mail, eggs (first clear / replay roll + Mythic pity), partner XP and level-ups
+- **My Room:** partner, feeding, renaming, the nest with warmth, hatching with the bag rule, the 도감
+- **Mailbox, Xylo's shop, cell history, Void's weekly report**
+- **Battle Room:** Weekly Trial with ranking, ghost challenge against a friend's record (friend codes)
+- **Daily quests** with a weekly stamp egg
+- **Admin page:** stats, question management for all mission types, reports, game settings (gauges, egg rarities, drop rates, prices) and a read-only SQL lab
+
+Not built yet: pet accessories, Chapters 2–5 (they are data: add stage rows).
+
+| Demo account | Password | |
+|---|---|---|
+| `student1` | `doro1234` | new student |
+| `student2` | `doro1234` | mid-game student (after `GET /api/demo-setup` once) |
+| `admin` | `admin1234` | operator page |
+
+## Tech stack
+
+| Part | Choice |
 |---|---|
-| **Must** | Chapter 1 playable with first-clear eggs · pets (hatching, partner, XP, forms, skills) · My Room with nest and 도감 · mailbox → claim → shop · admin question page · 100–150 questions |
-| **Should** | Replay egg drops + pity · daily quests · Battle Room (Weekly Trial, ghost challenge) · pixel art and puzzle missions · Void's report |
-| **Could** | Rhythm missions · Epic pets drawn · one sample Chapter 2 stage |
-| **Not in final** | Chapters 2–5 playable · Mythic pets playable · live duels |
+| Front end | TypeScript + Vite, no UI framework (HTML/CSS), pixel art |
+| API | Node.js + Express 5 (`server/`), deployed as one serverless function (`api/index.ts`) |
+| Database | PostgreSQL (Neon on Vercel; any Postgres 14+ locally) |
+| Hosting | Vercel |
 
 ## Repository layout
 
 ```
 .
-├── backend/     API, battle engine, game logic
-├── frontend/    Map, battle, My Room, mailbox, shop, Battle Room, admin page
-├── db/          PostgreSQL schema, migrations, seed scripts
-├── content/     Game data: chapters, stages, dialogue, pets, eggs, drop rates, config
-├── questions/   Question sets (DIMC categories) before import
-├── docs/        Plan, design specs, story, prototype
-└── CONTRIBUTING.md
+├── api/         Vercel entry (exports the Express app)
+├── server/      Express app: auth, battle engine, game rules, quests, Battle Room, admin
+├── db/          migrations/*.sql (schema) + migrate.mjs (migrate + seed)
+├── src/         front end: screens/, ui/ (sprites, sound), api.ts, types.ts (API contract)
+├── public/art/  svg/ = original pet art · px/ = pixel versions (64×64)
+├── content/     game data: stages, dialogue, pets, skills, eggs, drop rates, shop, config
+├── questions/   question bank (questions.json), loaded by the seed
+├── scripts/     playtest.mjs (end-to-end test), erd.mjs, pixel art pipeline
+├── tools/       pet art generator
+└── docs/        plan, design specs, story, HOW_IT_WORKS.md, erd/
 ```
-
-## Tech stack
-
-> To be confirmed by the team. Fill this in once decided.
-
-| Part | Choice |
-|---|---|
-| Database | PostgreSQL |
-| Backend | Node.js + TypeScript + Express (proposed in progress v4; confirm with DORO) |
-| Frontend | TypeScript + Vite (proposed; confirm with DORO) |
-| Hosting / demo | _TBD_ |
 
 ## Getting started
 
-> Placeholder. Update once the backend and frontend exist.
-
 ```bash
-git clone https://github.com/<org-or-user>/<repo>.git
-cd <repo>
-cp .env.example .env     # then fill in your own values
+git clone https://github.com/haikalfiqri/DodolDoroBus.git
+cd DodolDoroBus
+npm install
+cp .env.example .env            # put your own DATABASE_URL in it
+npm run db:setup                # create tables + load content, questions and demo accounts
+npm run dev:api                 # API on http://localhost:3000
+npm run dev                     # game on http://localhost:5173
+npm test                        # plays all of Chapter 1 through the API and checks the transactions
 ```
 
-Setup steps for each part are in `backend/README.md`, `frontend/README.md` and `db/README.md`.
+Use your own database for development: a local PostgreSQL, or your own Neon branch (ask the deploy owner).
+On Vercel, `npm run build` runs the migrations and the seed automatically.
+
+**Read [`docs/HOW_IT_WORKS.md`](docs/HOW_IT_WORKS.md)** for the database design, the transactions and every endpoint.
 
 ## Team
 
 | Member | Role |
 |---|---|
-| Imran | Planning, game design, story stages and dialogue, questions |
-| Wam | Presenting, testing, questions |
-| Asyraf | Research, testing, questions |
-| Akip | Database + backend (battle engine, story progress, pets and eggs, mailbox) |
-| Haikal | Documentation, questions, repository |
-| Wafi | Front end (story map, battle, My Room, shop, admin page) |
+| Imran | Team lead, planning, game design, integration, presentation |
+| Akip | Database + backend |
+| Wafi | Front end |
+| Wam | Pets, art, egg/pet system |
+| Haikal | Admin page, documentation, repository and deployment |
+| Asyraf | Research, questions, testing |
 
 ## Contributing
 

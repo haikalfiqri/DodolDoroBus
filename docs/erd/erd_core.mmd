@@ -1,0 +1,107 @@
+erDiagram
+  battle_turns {
+    bigint id PK
+    uuid battle_id FK
+    integer student_id FK
+    text skill_id FK
+    text question_id FK
+    text category_id FK
+    jsonb answer
+    boolean is_correct
+    numeric amount
+  }
+  battles {
+    uuid id PK
+    integer student_id FK
+    text stage_id FK
+    integer pet_id FK
+    text phase
+    integer energy
+    integer gauge
+    numeric combo
+    text skill_id FK
+  }
+  cell_ledger {
+    bigint id PK
+    integer student_id FK
+    integer delta
+    integer balance
+  }
+  eggs {
+    integer id PK
+    integer student_id FK
+    text rarity_id FK
+    integer warmth
+    integer nest_slot
+    timestamptz hatched_at
+    integer hatched_pet_id FK
+  }
+  pet_species {
+    text id PK
+    text rarity_id FK
+    text type_id FK
+    text signature_skill_id FK
+  }
+  pets {
+    integer id PK
+    integer student_id FK
+    text species_id FK
+    integer level
+    integer xp
+    boolean is_partner
+  }
+  questions {
+    text id PK
+    text category_id FK
+    text mission_type_id FK
+    jsonb answer
+    text status
+  }
+  rarities {
+    text id PK
+    integer hatch_correct_needed
+  }
+  reward_mail {
+    integer id PK
+    integer student_id FK
+    integer amount
+    timestamptz claimed_at
+  }
+  stage_progress {
+    integer student_id PK,FK
+    text stage_id PK,FK
+    integer best_stars
+  }
+  story_stages {
+    text id PK
+    integer chapter_id FK
+    integer gauge
+    text egg_slot
+  }
+  student_daily_limits {
+    integer student_id PK,FK
+    date day PK
+    integer rewarded_battles
+    integer cells_earned
+  }
+  students {
+    integer id PK
+    integer cells
+  }
+  rarities ||--o{ pet_species : "rarity_id"
+  students ||--o{ pets : "student_id"
+  pet_species ||--o{ pets : "species_id"
+  students ||--o{ eggs : "student_id"
+  rarities ||--o{ eggs : "rarity_id"
+  pets ||--o{ eggs : "hatched_pet_id"
+  students ||--o{ stage_progress : "student_id"
+  story_stages ||--o{ stage_progress : "stage_id"
+  students ||--o{ battles : "student_id"
+  story_stages ||--o{ battles : "stage_id"
+  pets ||--o{ battles : "pet_id"
+  battles ||--o{ battle_turns : "battle_id"
+  students ||--o{ battle_turns : "student_id"
+  questions ||--o{ battle_turns : "question_id"
+  students ||--o{ reward_mail : "student_id"
+  students ||--o{ cell_ledger : "student_id"
+  students ||--o{ student_daily_limits : "student_id"

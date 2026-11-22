@@ -46,12 +46,11 @@ Before you start new work, pull the latest `main` again.
 
 | Folder | Main owner |
 |---|---|
-| `backend/` | Akip |
-| `frontend/` | Wafi |
-| `db/` | Akip |
-| `content/` | Planning (story, stages, pets) |
-| `questions/` | Imran, Wam, Asyraf, Haikal |
-| `docs/` | Haikal |
+| `db/`, `server/` (game logic, transactions) | Akip |
+| `src/screens/` (map, battle, result, mailbox, shop) | Wafi |
+| `public/art/`, `tools/`, `src/screens/room.ts` (pets, eggs, My Room) | Wam |
+| `src/screens/admin.ts`, admin routes, `docs/`, deployment | Haikal |
+| `questions/`, `content/` | Asyraf (questions), Imran (story) |
 
 Ask the owner before making big changes in their folder.
 
@@ -61,6 +60,15 @@ Ask the owner before making big changes in their folder.
 - `node_modules/`, build output, virtual environments
 - Large binaries (slides, videos, big PDFs). Keep those in the shared drive.
 
+## Before you open a pull request
+
+```bash
+npm run typecheck     # no TypeScript errors
+npm test              # the end-to-end playtest passes (needs the API running: npm run dev:api)
+```
+
+Database changes go in a **new** file `db/migrations/00N_what_it_does.sql`. Never edit a migration that is already on `main`.
+
 ## Questions format
 
-Questions go in `questions/` using the template in `questions/TEMPLATE.csv`. Only admin-approved questions are used in the game, so mark new ones as `draft`.
+Questions go in `questions/questions.json` (see `questions/README.md`). They can also be added in the admin page.

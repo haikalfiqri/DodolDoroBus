@@ -1,0 +1,294 @@
+erDiagram
+  battle_turns {
+    bigint id PK
+    uuid battle_id FK
+    integer student_id FK
+    integer turn_no
+    text actor
+    text skill_id FK
+    text question_id FK
+    text category_id FK
+    jsonb answer
+    boolean is_correct
+    text effect
+    numeric amount
+    timestamptz created_at
+  }
+  battles {
+    uuid id PK
+    integer student_id FK
+    text stage_id FK
+    integer pet_id FK
+    text mode
+    text phase
+    integer round
+    integer energy
+    integer max_energy
+    integer gauge
+    numeric combo
+    numeric combo_base
+    text skill_id FK
+    jsonb current
+    array used
+    integer correct
+    integer total
+    boolean hint_used
+    jsonb passive
+    timestamptz started_at
+    timestamptz finished_at
+  }
+  cell_ledger {
+    bigint id PK
+    integer student_id FK
+    integer delta
+    text reason
+    text ref
+    integer balance
+    timestamptz created_at
+  }
+  chapter_first_clear_eggs {
+    integer chapter_id PK,FK
+    text slot PK
+    text rarity_id FK
+  }
+  egg_drop_rates {
+    integer chapter_id PK,FK
+    text slot PK
+    text rarity_id PK,FK
+    numeric percent
+  }
+  eggs {
+    integer id PK
+    integer student_id FK
+    text rarity_id FK
+    text source
+    text source_ref
+    integer warmth
+    integer nest_slot
+    timestamptz hatched_at
+    integer hatched_pet_id FK
+    boolean became_snack
+    timestamptz created_at
+  }
+  game_config {
+    text key PK
+    jsonb value
+  }
+  mission_types {
+    text id PK
+    text name_ko
+    integer time_s
+  }
+  pet_species {
+    text id PK
+    text rarity_id FK
+    text name_ko
+    text type_id FK
+    text signature_skill_id FK
+    text passive_code
+    text passive_ko
+  }
+  pets {
+    integer id PK
+    integer student_id FK
+    text species_id FK
+    text nickname
+    integer level
+    integer xp
+    boolean is_partner
+    date last_fed_on
+    date born_on
+    timestamptz created_at
+  }
+  quest_stamps {
+    integer student_id PK,FK
+    date week_start PK
+    integer stamps
+    boolean egg_given
+  }
+  question_categories {
+    text id PK
+    text name_ko
+  }
+  question_reports {
+    integer id PK
+    text question_id FK
+    integer student_id FK
+    text reason
+    boolean resolved
+    timestamptz created_at
+  }
+  questions {
+    text id PK
+    text category_id FK
+    text difficulty
+    text mission_type_id FK
+    text prompt
+    jsonb payload
+    jsonb answer
+    text explanation
+    text status
+    text created_by
+    timestamptz created_at
+    timestamptz updated_at
+  }
+  rarities {
+    text id PK
+    integer ord
+    text egg_name_ko
+    text colour
+    integer hatch_correct_needed
+  }
+  reward_mail {
+    integer id PK
+    integer student_id FK
+    text title
+    integer amount
+    text source_ref
+    timestamptz created_at
+    timestamptz claimed_at
+  }
+  shop_items {
+    text id PK
+    text name_ko
+    text kind
+    integer price
+    text effect
+  }
+  skills {
+    text id PK
+    text name_ko
+    text category_id FK
+    text kind
+  }
+  stage_dialogue {
+    text stage_id PK,FK
+    text moment PK
+    integer seq PK
+    text speaker
+    text text
+  }
+  stage_progress {
+    integer student_id PK,FK
+    text stage_id PK,FK
+    integer best_stars
+    integer clears
+    timestamptz first_cleared_at
+    integer best_score
+  }
+  story_chapters {
+    integer id PK
+    integer ord
+    text name_ko
+    text name_en
+    text status
+    numeric boss_mythic_percent
+  }
+  story_stages {
+    text id PK
+    integer chapter_id FK
+    integer ord
+    boolean is_boss
+    text name_ko
+    text anomaly_ko
+    integer gauge
+    integer max_rounds
+    array categories
+    array mission_types
+    text difficulty
+    text egg_slot
+  }
+  student_daily_limits {
+    integer student_id PK,FK
+    date day PK
+    integer rewarded_battles
+    integer cells_earned
+    boolean first_clear_bonus
+  }
+  student_items {
+    integer student_id PK,FK
+    text item_id PK,FK
+    integer qty
+  }
+  student_quests {
+    integer student_id PK,FK
+    date day PK
+    text quest_id PK
+    integer target
+    timestamptz claimed_at
+  }
+  students {
+    integer id PK
+    text username
+    text nickname
+    text password_hash
+    text role
+    integer cells
+    timestamptz onboarded_at
+    array unlocks
+    timestamptz battle_room_unlocked_at
+    integer mythic_pity
+    integer nest_slots
+    date three_star_day
+    date free_hint_day
+    timestamptz created_at
+  }
+  trial_runs {
+    uuid id PK
+    integer student_id FK
+    date week_start FK
+    integer idx
+    jsonb q_order
+    timestamptz q_started_at
+    integer correct
+    numeric combo
+    numeric best_combo
+    integer time_bonus
+    integer score
+    timestamptz started_at
+    timestamptz finished_at
+  }
+  weekly_trials {
+    date week_start PK
+    array question_ids
+    timestamptz created_at
+  }
+  story_chapters ||--o{ chapter_first_clear_eggs : "chapter_id"
+  rarities ||--o{ chapter_first_clear_eggs : "rarity_id"
+  story_chapters ||--o{ story_stages : "chapter_id"
+  story_stages ||--o{ stage_dialogue : "stage_id"
+  story_chapters ||--o{ egg_drop_rates : "chapter_id"
+  rarities ||--o{ egg_drop_rates : "rarity_id"
+  question_categories ||--o{ skills : "category_id"
+  rarities ||--o{ pet_species : "rarity_id"
+  question_categories ||--o{ pet_species : "type_id"
+  skills ||--o{ pet_species : "signature_skill_id"
+  question_categories ||--o{ questions : "category_id"
+  mission_types ||--o{ questions : "mission_type_id"
+  students ||--o{ pets : "student_id"
+  pet_species ||--o{ pets : "species_id"
+  students ||--o{ eggs : "student_id"
+  rarities ||--o{ eggs : "rarity_id"
+  pets ||--o{ eggs : "hatched_pet_id"
+  students ||--o{ stage_progress : "student_id"
+  story_stages ||--o{ stage_progress : "stage_id"
+  students ||--o{ battles : "student_id"
+  story_stages ||--o{ battles : "stage_id"
+  pets ||--o{ battles : "pet_id"
+  skills ||--o{ battles : "skill_id"
+  battles ||--o{ battle_turns : "battle_id"
+  students ||--o{ battle_turns : "student_id"
+  skills ||--o{ battle_turns : "skill_id"
+  questions ||--o{ battle_turns : "question_id"
+  question_categories ||--o{ battle_turns : "category_id"
+  students ||--o{ reward_mail : "student_id"
+  students ||--o{ cell_ledger : "student_id"
+  students ||--o{ student_items : "student_id"
+  shop_items ||--o{ student_items : "item_id"
+  students ||--o{ student_daily_limits : "student_id"
+  questions ||--o{ question_reports : "question_id"
+  students ||--o{ question_reports : "student_id"
+  students ||--o{ trial_runs : "student_id"
+  weekly_trials ||--o{ trial_runs : "week_start"
+  students ||--o{ student_quests : "student_id"
+  students ||--o{ quest_stamps : "student_id"
