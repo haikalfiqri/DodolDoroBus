@@ -1,0 +1,20 @@
+[
+ {
+  "id": "q999",
+  "cat": "ai",
+  "diff": "easy",
+  "type": "choice4",
+  "prompt": "문제를 여기에 써요",
+  "payload": {
+   "choices": [
+    "정답",
+    "오답 1",
+    "오답 2",
+    "오답 3"
+   ]
+  },
+  "answer": 0,
+  "ex": "학생이 답한 뒤 보이는 해설",
+  "status": "draft"
+ }
+]
