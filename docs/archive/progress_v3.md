@@ -189,8 +189,8 @@ Admin-approved questions only · no free chat (emoji only) · nicknames only · 
 
 | When | Task | Who |
 |---|---|---|
-| Fri night | progress_v3 · team briefing v3 · reply to the DORO developer | Claude, Imran |
-| Sat | ERD v3 → mockups → slides → scripts + Q&A · rehearsal at night | Claude + Imran (Wam practises after work) |
+| Fri night | progress_v3 · team briefing v3 · reply to the DORO developer | Imran |
+| Sat | ERD v3 → mockups → slides → scripts + Q&A · rehearsal at night | Imran (Wam practises after work) |
 | Sat (optional) | Check ERD v3 | Akip |
 | Mon morning | Full run together, then present | Imran, Wam |
 

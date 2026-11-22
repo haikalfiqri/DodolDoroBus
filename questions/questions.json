@@ -1,0 +1,1859 @@
+[
+ {
+  "id": "q1",
+  "cat": "ai",
+  "diff": "easy",
+  "type": "choice4",
+  "prompt": "AI가 고양이 사진을 잘 구분하려면 무엇이 가장 많이 필요할까?",
+  "payload": {
+   "choices": [
+    "고양이 사진 데이터",
+    "더 큰 모니터",
+    "빠른 와이파이",
+    "새 키보드"
+   ]
+  },
+  "answer": 0,
+  "ex": "AI는 많은 예시(데이터)를 보고 규칙을 배워요."
+ },
+ {
+  "id": "q2",
+  "cat": "ai",
+  "diff": "easy",
+  "type": "choice4",
+  "prompt": "🔴🔵🔴🔵🔴 다음에 올 것은?",
+  "payload": {
+   "choices": [
+    "🔵",
+    "🔴",
+    "🟢",
+    "🟡"
+   ]
+  },
+  "answer": 0,
+  "ex": "빨강과 파랑이 번갈아 나오는 패턴이에요."
+ },
+ {
+  "id": "q3",
+  "cat": "ai",
+  "diff": "easy",
+  "type": "choice4",
+  "prompt": "영상 앱이 추천 영상을 고를 때 주로 보는 것은?",
+  "payload": {
+   "choices": [
+    "내가 전에 본 영상 기록",
+    "오늘 날씨",
+    "휴대폰 색깔",
+    "배터리 양"
+   ]
+  },
+  "answer": 0,
+  "ex": "추천 AI는 내가 본 기록에서 좋아할 만한 것을 찾아요."
+ },
+ {
+  "id": "q4",
+  "cat": "ai",
+  "diff": "easy",
+  "type": "choice4",
+  "prompt": "AI 스피커가 내 말을 알아듣는 기술은?",
+  "payload": {
+   "choices": [
+    "음성 인식",
+    "화면 밝기 조절",
+    "배터리 절약",
+    "손전등"
+   ]
+  },
+  "answer": 0,
+  "ex": "음성 인식은 사람의 말을 글자로 바꿔 줘요."
+ },
+ {
+  "id": "q5",
+  "cat": "ai",
+  "diff": "normal",
+  "type": "choice4",
+  "prompt": "사진 속 동물이 강아지인지 고양이인지 나누는 AI 일은?",
+  "payload": {
+   "choices": [
+    "분류",
+    "저장",
+    "인쇄",
+    "충전"
+   ]
+  },
+  "answer": 0,
+  "ex": "정해진 무리 중 어디에 속하는지 고르는 것을 분류라고 해요."
+ },
+ {
+  "id": "q6",
+  "cat": "ai",
+  "diff": "normal",
+  "type": "choice4",
+  "prompt": "AI가 엉뚱한 답을 했을 때 가장 좋은 행동은?",
+  "payload": {
+   "choices": [
+    "다른 자료로 다시 확인한다",
+    "그대로 믿는다",
+    "친구에게 그대로 퍼뜨린다",
+    "AI를 혼낸다"
+   ]
+  },
+  "answer": 0,
+  "ex": "AI의 답은 다른 자료로 확인하는 습관이 중요해요."
+ },
+ {
+  "id": "q7",
+  "cat": "ai",
+  "diff": "easy",
+  "type": "ox",
+  "prompt": "AI도 틀린 답을 말할 수 있다.",
+  "payload": null,
+  "answer": "O",
+  "ex": "AI의 답은 항상 한 번 더 확인해야 해요."
+ },
+ {
+  "id": "q8",
+  "cat": "ai",
+  "diff": "easy",
+  "type": "ox",
+  "prompt": "AI는 항상 정답만 말한다.",
+  "payload": null,
+  "answer": "X",
+  "ex": "AI도 틀릴 수 있어요."
+ },
+ {
+  "id": "q9",
+  "cat": "ai",
+  "diff": "easy",
+  "type": "ox",
+  "prompt": "데이터가 잘못되어 있으면 AI도 틀릴 수 있다.",
+  "payload": null,
+  "answer": "O",
+  "ex": "AI는 배운 데이터만큼만 똑똑해요."
+ },
+ {
+  "id": "q10",
+  "cat": "ai",
+  "diff": "normal",
+  "type": "ox",
+  "prompt": "AI는 사람처럼 기분이 좋아서 답을 바꾼다.",
+  "payload": null,
+  "answer": "X",
+  "ex": "AI는 배운 패턴과 확률로 답을 골라요."
+ },
+ {
+  "id": "q11",
+  "cat": "ai",
+  "diff": "easy",
+  "type": "puzzle",
+  "prompt": "발자국 패턴을 읽어 봐! 다음은?",
+  "payload": {
+   "seq": [
+    "🐾",
+    "🐾",
+    "🌿",
+    "🐾",
+    "🐾",
+    "?"
+   ],
+   "choices": [
+    "🌿",
+    "🐾",
+    "🦁",
+    "🌳"
+   ]
+  },
+  "answer": 0,
+  "ex": "발자국 2개, 풀 1개가 반복돼요."
+ },
+ {
+  "id": "q12",
+  "cat": "ai",
+  "diff": "normal",
+  "type": "puzzle",
+  "prompt": "숫자 규칙을 찾아 봐! 다음은?",
+  "payload": {
+   "seq": [
+    2,
+    4,
+    8,
+    16,
+    "?"
+   ],
+   "choices": [
+    18,
+    24,
+    32,
+    30
+   ]
+  },
+  "answer": 2,
+  "ex": "2배씩 커지는 패턴이에요."
+ },
+ {
+  "id": "q13",
+  "cat": "ai",
+  "diff": "normal",
+  "type": "puzzle",
+  "prompt": "앞의 두 수를 더하면? 다음은?",
+  "payload": {
+   "seq": [
+    1,
+    1,
+    2,
+    3,
+    5,
+    "?"
+   ],
+   "choices": [
+    7,
+    8,
+    6,
+    9
+   ]
+  },
+  "answer": 1,
+  "ex": "앞의 두 수를 더하는 피보나치 패턴이에요."
+ },
+ {
+  "id": "q14",
+  "cat": "ai",
+  "diff": "easy",
+  "type": "puzzle",
+  "prompt": "모양 규칙을 찾아 봐! 다음은?",
+  "payload": {
+   "seq": [
+    "🔺",
+    "🟦",
+    "🟦",
+    "🔺",
+    "🟦",
+    "🟦",
+    "?"
+   ],
+   "choices": [
+    "🟦",
+    "🔺",
+    "🟢",
+    "⭐"
+   ]
+  },
+  "answer": 1,
+  "ex": "🔺 하나, 🟦 둘이 반복돼요."
+ },
+ {
+  "id": "q15",
+  "cat": "ai",
+  "diff": "normal",
+  "type": "keyword",
+  "prompt": "AI가 배우기 위해 보는 많은 예시를 무엇이라고 할까? (3글자)",
+  "payload": null,
+  "answer": [
+   "데이터",
+   "data"
+  ],
+  "ex": "AI는 데이터에서 규칙을 배워요."
+ },
+ {
+  "id": "q17",
+  "cat": "digital",
+  "diff": "easy",
+  "type": "choice4",
+  "prompt": "가장 안전한 비밀번호는?",
+  "payload": {
+   "choices": [
+    "doro!Rabbit27",
+    "1234",
+    "password",
+    "내 생일 0101"
+   ]
+  },
+  "answer": 0,
+  "ex": "길고, 글자·숫자·기호가 섞인 비밀번호가 안전해요."
+ },
+ {
+  "id": "q18",
+  "cat": "digital",
+  "diff": "easy",
+  "type": "choice4",
+  "prompt": "모르는 사람이 보낸 링크를 받으면?",
+  "payload": {
+   "choices": [
+    "누르지 않고 어른에게 알린다",
+    "바로 눌러 본다",
+    "친구들에게 퍼뜨린다",
+    "내 비밀번호를 답장한다"
+   ]
+  },
+  "answer": 0,
+  "ex": "모르는 링크는 누르지 말고 어른에게 먼저 알려요."
+ },
+ {
+  "id": "q19",
+  "cat": "digital",
+  "diff": "easy",
+  "type": "choice4",
+  "prompt": "디지털 사진을 크게 확대하면 보이는 작은 네모 점은?",
+  "payload": {
+   "choices": [
+    "픽셀",
+    "폴더",
+    "배터리",
+    "커서"
+   ]
+  },
+  "answer": 0,
+  "ex": "사진은 아주 작은 색깔 점(픽셀)이 모여서 만들어져요."
+ },
+ {
+  "id": "q20",
+  "cat": "digital",
+  "diff": "easy",
+  "type": "choice4",
+  "prompt": "다음 중 개인정보가 아닌 것은?",
+  "payload": {
+   "choices": [
+    "좋아하는 색깔",
+    "집 주소",
+    "전화번호",
+    "학교와 반 번호"
+   ]
+  },
+  "answer": 0,
+  "ex": "나를 찾을 수 있는 정보가 개인정보예요."
+ },
+ {
+  "id": "q21",
+  "cat": "digital",
+  "diff": "normal",
+  "type": "choice4",
+  "prompt": "컴퓨터는 정보를 어떤 숫자로 저장할까?",
+  "payload": {
+   "choices": [
+    "0과 1",
+    "1부터 10",
+    "짝수만",
+    "100과 200"
+   ]
+  },
+  "answer": 0,
+  "ex": "컴퓨터는 0과 1(이진수)로 모든 정보를 저장해요."
+ },
+ {
+  "id": "q22",
+  "cat": "digital",
+  "diff": "normal",
+  "type": "choice4",
+  "prompt": "키보드, 마우스처럼 컴퓨터에 정보를 넣는 장치는?",
+  "payload": {
+   "choices": [
+    "입력 장치",
+    "출력 장치",
+    "저장 장치",
+    "전원 장치"
+   ]
+  },
+  "answer": 0,
+  "ex": "키보드와 마우스는 입력 장치예요."
+ },
+ {
+  "id": "q23",
+  "cat": "digital",
+  "diff": "easy",
+  "type": "ox",
+  "prompt": "인터넷에 올린 사진은 지워도 다른 곳에 남아 있을 수 있다.",
+  "payload": null,
+  "answer": "O",
+  "ex": "누가 저장했거나 공유했다면 지워도 남을 수 있어요."
+ },
+ {
+  "id": "q24",
+  "cat": "digital",
+  "diff": "easy",
+  "type": "ox",
+  "prompt": "게임 아이템을 준다며 비밀번호를 물어보면 알려줘도 된다.",
+  "payload": null,
+  "answer": "X",
+  "ex": "비밀번호는 누구에게도 알려 주면 안 돼요."
+ },
+ {
+  "id": "q25",
+  "cat": "digital",
+  "diff": "easy",
+  "type": "ox",
+  "prompt": "인터넷에 있는 정보는 모두 사실이다.",
+  "payload": null,
+  "answer": "X",
+  "ex": "인터넷 정보는 여러 곳에서 확인해야 해요."
+ },
+ {
+  "id": "q26",
+  "cat": "digital",
+  "diff": "easy",
+  "type": "ox",
+  "prompt": "모니터는 글자를 입력하는 장치다.",
+  "payload": null,
+  "answer": "X",
+  "ex": "모니터는 출력 장치, 키보드가 입력 장치예요."
+ },
+ {
+  "id": "q27",
+  "cat": "digital",
+  "diff": "easy",
+  "type": "ox",
+  "prompt": "집 주소는 개인정보다.",
+  "payload": null,
+  "answer": "O",
+  "ex": "집 주소로 나를 찾을 수 있으니 개인정보예요."
+ },
+ {
+  "id": "q28",
+  "cat": "digital",
+  "diff": "easy",
+  "type": "pixel_art",
+  "prompt": "전광판에 하트를 켜 봐! 왼쪽 그림과 똑같이 칠해요.",
+  "payload": {
+   "target": [
+    "01010",
+    "11111",
+    "11111",
+    "01110",
+    "00100"
+   ]
+  },
+  "answer": null,
+  "ex": "점(픽셀)을 하나씩 켜면 그림이 돼요."
+ },
+ {
+  "id": "q29",
+  "cat": "digital",
+  "diff": "normal",
+  "type": "pixel_art",
+  "prompt": "전광판에 위쪽 화살표를 켜 봐!",
+  "payload": {
+   "target": [
+    "00100",
+    "01110",
+    "10101",
+    "00100",
+    "00100"
+   ]
+  },
+  "answer": null,
+  "ex": "픽셀 그림은 줄마다 세어 보면 쉬워요."
+ },
+ {
+  "id": "q30",
+  "cat": "digital",
+  "diff": "normal",
+  "type": "pixel_art",
+  "prompt": "전광판에 웃는 얼굴을 켜 봐!",
+  "payload": {
+   "target": [
+    "01010",
+    "01010",
+    "00000",
+    "10001",
+    "01110"
+   ]
+  },
+  "answer": null,
+  "ex": "디지털 화면도 이렇게 픽셀로 그려요."
+ },
+ {
+  "id": "q31",
+  "cat": "digital",
+  "diff": "normal",
+  "type": "keyword",
+  "prompt": "사진을 이루는 아주 작은 색깔 점은? (2글자)",
+  "payload": null,
+  "answer": [
+   "픽셀",
+   "pixel"
+  ],
+  "ex": "픽셀(pixel)은 그림의 가장 작은 점이에요."
+ },
+ {
+  "id": "q33",
+  "cat": "making",
+  "diff": "easy",
+  "type": "choice4",
+  "prompt": "로봇이 앞에 벽이 있는지 알아채는 부품은?",
+  "payload": {
+   "choices": [
+    "거리 센서",
+    "스피커",
+    "배터리 덮개",
+    "바퀴"
+   ]
+  },
+  "answer": 0,
+  "ex": "거리 센서는 앞에 있는 물건까지의 거리를 재요."
+ },
+ {
+  "id": "q34",
+  "cat": "making",
+  "diff": "easy",
+  "type": "choice4",
+  "prompt": "로봇 바퀴를 돌려 주는 부품은?",
+  "payload": {
+   "choices": [
+    "모터",
+    "센서",
+    "LED",
+    "스위치"
+   ]
+  },
+  "answer": 0,
+  "ex": "모터가 전기를 받아 바퀴를 돌려요."
+ },
+ {
+  "id": "q35",
+  "cat": "making",
+  "diff": "easy",
+  "type": "choice4",
+  "prompt": "전기를 저장했다가 로봇에 주는 것은?",
+  "payload": {
+   "choices": [
+    "배터리",
+    "모터",
+    "바퀴",
+    "나사"
+   ]
+  },
+  "answer": 0,
+  "ex": "배터리는 전기를 저장하는 통이에요."
+ },
+ {
+  "id": "q36",
+  "cat": "making",
+  "diff": "easy",
+  "type": "choice4",
+  "prompt": "로봇이 불빛으로 신호를 보여 줄 때 쓰는 부품은?",
+  "payload": {
+   "choices": [
+    "LED",
+    "모터",
+    "기어",
+    "배터리"
+   ]
+  },
+  "answer": 0,
+  "ex": "LED는 전기가 흐르면 빛을 내요."
+ },
+ {
+  "id": "q37",
+  "cat": "making",
+  "diff": "normal",
+  "type": "choice4",
+  "prompt": "3D 프린터로 물건을 만들기 전에 먼저 하는 일은?",
+  "payload": {
+   "choices": [
+    "컴퓨터로 모양을 설계한다",
+    "바로 녹인다",
+    "색칠부터 한다",
+    "상자에 넣는다"
+   ]
+  },
+  "answer": 0,
+  "ex": "먼저 설계 파일을 만들어야 프린터가 따라 만들 수 있어요."
+ },
+ {
+  "id": "q38",
+  "cat": "making",
+  "diff": "normal",
+  "type": "choice4",
+  "prompt": "로봇 팔에서 물건을 잡는 부분은?",
+  "payload": {
+   "choices": [
+    "그리퍼",
+    "안테나",
+    "바퀴",
+    "센서"
+   ]
+  },
+  "answer": 0,
+  "ex": "그리퍼는 로봇의 손 역할을 해요."
+ },
+ {
+  "id": "q39",
+  "cat": "making",
+  "diff": "easy",
+  "type": "ox",
+  "prompt": "전기 회로가 중간에 끊기면 불이 켜지지 않는다.",
+  "payload": null,
+  "answer": "O",
+  "ex": "전기는 길이 이어져 있어야 흐를 수 있어요."
+ },
+ {
+  "id": "q40",
+  "cat": "making",
+  "diff": "easy",
+  "type": "ox",
+  "prompt": "톱니바퀴(기어) 크기를 바꾸면 도는 속도도 바뀔 수 있다.",
+  "payload": null,
+  "answer": "O",
+  "ex": "큰 기어와 작은 기어를 맞물리면 속도가 달라져요."
+ },
+ {
+  "id": "q41",
+  "cat": "making",
+  "diff": "easy",
+  "type": "ox",
+  "prompt": "센서는 빛, 소리, 거리 같은 주변 정보를 알아챈다.",
+  "payload": null,
+  "answer": "O",
+  "ex": "센서는 로봇의 눈과 귀 역할을 해요."
+ },
+ {
+  "id": "q42",
+  "cat": "making",
+  "diff": "normal",
+  "type": "ox",
+  "prompt": "로봇은 프로그램이 없어도 스스로 생각해서 움직인다.",
+  "payload": null,
+  "answer": "X",
+  "ex": "로봇은 프로그램(명령)이 있어야 움직여요."
+ },
+ {
+  "id": "q43",
+  "cat": "making",
+  "diff": "easy",
+  "type": "order",
+  "prompt": "도로카 로봇 키트를 조립하는 순서대로 눌러 봐!",
+  "payload": {
+   "items": [
+    "바퀴를 모터에 끼운다",
+    "모터를 몸체에 붙인다",
+    "배터리를 연결한다",
+    "스위치를 켜서 확인한다"
+   ]
+  },
+  "answer": null,
+  "ex": "만들기도 순서를 지켜야 잘 움직여요."
+ },
+ {
+  "id": "q44",
+  "cat": "making",
+  "diff": "easy",
+  "type": "order",
+  "prompt": "LED 불을 켜는 회로를 만드는 순서는?",
+  "payload": {
+   "items": [
+    "건전지를 준비한다",
+    "전선을 연결한다",
+    "LED를 끼운다",
+    "스위치를 켠다"
+   ]
+  },
+  "answer": null,
+  "ex": "전기가 지나갈 길을 먼저 만들어요."
+ },
+ {
+  "id": "q45",
+  "cat": "making",
+  "diff": "normal",
+  "type": "order",
+  "prompt": "3D 프린터로 열쇠고리를 만드는 순서는?",
+  "payload": {
+   "items": [
+    "모양을 설계한다",
+    "설계 파일을 저장한다",
+    "프린터로 출력한다",
+    "거친 부분을 다듬는다"
+   ]
+  },
+  "answer": null,
+  "ex": "설계 → 출력 → 마무리 순서예요."
+ },
+ {
+  "id": "q46",
+  "cat": "making",
+  "diff": "normal",
+  "type": "keyword",
+  "prompt": "전기를 받아 바퀴를 돌리는 부품은? (2글자)",
+  "payload": null,
+  "answer": [
+   "모터",
+   "motor"
+  ],
+  "ex": "모터는 전기를 움직임으로 바꿔요."
+ },
+ {
+  "id": "q47",
+  "cat": "computing",
+  "diff": "easy",
+  "type": "choice4",
+  "prompt": "같은 명령을 여러 번 되풀이하게 하는 것은?",
+  "payload": {
+   "choices": [
+    "반복",
+    "멈춤",
+    "삭제",
+    "저장"
+   ]
+  },
+  "answer": 0,
+  "ex": "반복문으로 같은 일을 여러 번 시킬 수 있어요."
+ },
+ {
+  "id": "q48",
+  "cat": "computing",
+  "diff": "easy",
+  "type": "choice4",
+  "prompt": "\"만약 비가 오면 우산을 챙긴다\"처럼 조건에 따라 다르게 움직이는 것은?",
+  "payload": {
+   "choices": [
+    "조건문",
+    "반복문",
+    "변수",
+    "출력"
+   ]
+  },
+  "answer": 0,
+  "ex": "조건이 맞을 때만 실행하는 것이 조건문이에요."
+ },
+ {
+  "id": "q49",
+  "cat": "computing",
+  "diff": "normal",
+  "type": "choice4",
+  "prompt": "프로그램이 잘못 움직이는 원인(버그)을 찾아 고치는 일은?",
+  "payload": {
+   "choices": [
+    "디버깅",
+    "다운로드",
+    "충전",
+    "로그인"
+   ]
+  },
+  "answer": 0,
+  "ex": "버그를 잡는 일을 디버깅이라고 해요."
+ },
+ {
+  "id": "q50",
+  "cat": "computing",
+  "diff": "normal",
+  "type": "choice4",
+  "prompt": "게임 점수처럼 바뀌는 값을 담아 두는 상자는?",
+  "payload": {
+   "choices": [
+    "변수",
+    "모니터",
+    "마우스",
+    "폴더"
+   ]
+  },
+  "answer": 0,
+  "ex": "변수는 값을 담는 이름 붙은 상자예요."
+ },
+ {
+  "id": "q51",
+  "cat": "computing",
+  "diff": "easy",
+  "type": "ox",
+  "prompt": "알고리즘은 문제를 해결하는 순서다.",
+  "payload": null,
+  "answer": "O",
+  "ex": "알고리즘 = 문제를 푸는 순서예요."
+ },
+ {
+  "id": "q52",
+  "cat": "computing",
+  "diff": "easy",
+  "type": "ox",
+  "prompt": "같은 일을 여러 번 되풀이하는 것을 반복이라고 한다.",
+  "payload": null,
+  "answer": "O",
+  "ex": "코딩에서는 반복문으로 같은 일을 여러 번 시켜요."
+ },
+ {
+  "id": "q53",
+  "cat": "computing",
+  "diff": "easy",
+  "type": "ox",
+  "prompt": "컴퓨터는 명령 순서가 바뀌어도 항상 같은 결과를 낸다.",
+  "payload": null,
+  "answer": "X",
+  "ex": "순서가 바뀌면 결과도 바뀌어요."
+ },
+ {
+  "id": "q54",
+  "cat": "computing",
+  "diff": "normal",
+  "type": "ox",
+  "prompt": "컴퓨터는 시킨 일만 그대로 한다.",
+  "payload": null,
+  "answer": "O",
+  "ex": "컴퓨터는 명령을 그대로 실행해요."
+ },
+ {
+  "id": "q55",
+  "cat": "computing",
+  "diff": "easy",
+  "type": "order",
+  "prompt": "라면을 끓이는 순서대로 눌러 봐!",
+  "payload": {
+   "items": [
+    "냄비에 물을 붓는다",
+    "물을 끓인다",
+    "면과 스프를 넣는다",
+    "3분 뒤 불을 끈다"
+   ]
+  },
+  "answer": null,
+  "ex": "명령은 순서가 바뀌면 결과가 달라져요. 이것이 알고리즘이에요."
+ },
+ {
+  "id": "q56",
+  "cat": "computing",
+  "diff": "easy",
+  "type": "order",
+  "prompt": "횡단보도를 안전하게 건너는 순서는?",
+  "payload": {
+   "items": [
+    "멈춰 서기",
+    "초록불 확인하기",
+    "왼쪽·오른쪽 살피기",
+    "손 들고 건너기"
+   ]
+  },
+  "answer": null,
+  "ex": "순서를 지키면 안전하게 건널 수 있어요."
+ },
+ {
+  "id": "q57",
+  "cat": "computing",
+  "diff": "normal",
+  "type": "order",
+  "prompt": "고장 난 전광판을 고치는 순서는?",
+  "payload": {
+   "items": [
+    "전원 끄기",
+    "고장 난 칸 찾기",
+    "새 칸으로 바꾸기",
+    "전원 켜고 확인하기"
+   ]
+  },
+  "answer": null,
+  "ex": "문제를 찾고, 고치고, 확인하는 것이 디버깅이에요."
+ },
+ {
+  "id": "q58",
+  "cat": "computing",
+  "diff": "easy",
+  "type": "command_order",
+  "prompt": "🤖 도로카를 깃발 🚩까지 보내는 명령 블록을 순서대로!",
+  "payload": {
+   "items": [
+    "출발하기",
+    "앞으로 2칸",
+    "오른쪽으로 돌기",
+    "앞으로 1칸",
+    "멈춤"
+   ]
+  },
+  "answer": null,
+  "ex": "명령 블록은 위에서 아래로 한 줄씩 실행돼요."
+ },
+ {
+  "id": "q59",
+  "cat": "computing",
+  "diff": "normal",
+  "type": "command_order",
+  "prompt": "제로의 운전면허 2코스: 주차하기!",
+  "payload": {
+   "items": [
+    "시동 켜기",
+    "앞으로 3칸",
+    "왼쪽으로 돌기",
+    "뒤로 1칸",
+    "시동 끄기"
+   ]
+  },
+  "answer": null,
+  "ex": "코스도 명령 순서대로 움직여요."
+ },
+ {
+  "id": "q60",
+  "cat": "computing",
+  "diff": "normal",
+  "type": "command_order",
+  "prompt": "로봇 청소기의 청소 순서를 블록으로!",
+  "payload": {
+   "items": [
+    "충전기에서 출발",
+    "앞으로 가며 청소",
+    "벽을 만나면 돌기",
+    "충전기로 돌아가기"
+   ]
+  },
+  "answer": null,
+  "ex": "센서가 벽을 느끼면 도는 것도 명령이에요."
+ },
+ {
+  "id": "q61",
+  "cat": "computing",
+  "diff": "easy",
+  "type": "command_order",
+  "prompt": "교차로를 지나는 도로카 명령 순서는?",
+  "payload": {
+   "items": [
+    "신호등 보기",
+    "초록불이면 출발",
+    "앞으로 3칸",
+    "멈춤"
+   ]
+  },
+  "answer": null,
+  "ex": "조건(초록불)을 확인하고 움직여요."
+ },
+ {
+  "id": "q62",
+  "cat": "computing",
+  "diff": "normal",
+  "type": "keyword",
+  "prompt": "문제를 해결하는 순서를 뭐라고 할까? 알고○○",
+  "payload": null,
+  "answer": [
+   "알고리즘",
+   "algorithm"
+  ],
+  "ex": "알고리즘은 문제를 푸는 순서예요."
+ },
+ {
+  "id": "q100",
+  "cat": "ai",
+  "diff": "easy",
+  "type": "choice4",
+  "prompt": "AI가 사람 얼굴을 알아보는 기술은?",
+  "payload": {
+   "choices": [
+    "얼굴 인식",
+    "글자 확대",
+    "소리 줄이기",
+    "화면 끄기"
+   ]
+  },
+  "answer": 0,
+  "ex": "얼굴 인식은 사진 속 얼굴의 특징을 찾아 누구인지 구분해요."
+ },
+ {
+  "id": "q101",
+  "cat": "ai",
+  "diff": "easy",
+  "type": "choice4",
+  "prompt": "번역 앱이 한국어를 영어로 바꿔 주는 것은 무엇을 이용한 걸까?",
+  "payload": {
+   "choices": [
+    "AI 번역",
+    "계산기",
+    "손전등",
+    "알람"
+   ]
+  },
+  "answer": 0,
+  "ex": "AI는 많은 문장 예시를 배워서 언어를 바꿔 줘요."
+ },
+ {
+  "id": "q102",
+  "cat": "ai",
+  "diff": "normal",
+  "type": "choice4",
+  "prompt": "AI에게 고양이를 가르칠 때 사진마다 \"고양이\"라고 이름을 붙이는 일을 무엇이라고 할까?",
+  "payload": {
+   "choices": [
+    "라벨링",
+    "코딩",
+    "충전",
+    "인쇄"
+   ]
+  },
+  "answer": 0,
+  "ex": "데이터에 정답 이름표를 붙이는 일을 라벨링이라고 해요."
+ },
+ {
+  "id": "q103",
+  "cat": "ai",
+  "diff": "normal",
+  "type": "choice4",
+  "prompt": "AI가 강아지 사진만 많이 보고 배웠다면 어떤 일이 생길까?",
+  "payload": {
+   "choices": [
+    "고양이도 강아지라고 할 수 있다",
+    "모든 동물을 완벽히 안다",
+    "사진을 못 본다",
+    "배터리가 닳는다"
+   ]
+  },
+  "answer": 0,
+  "ex": "AI는 배운 데이터만큼만 알아요. 여러 가지 데이터가 필요해요."
+ },
+ {
+  "id": "q104",
+  "cat": "ai",
+  "diff": "hard",
+  "type": "choice4",
+  "prompt": "자율주행 자동차의 AI가 꼭 알아봐야 하는 것이 아닌 것은?",
+  "payload": {
+   "choices": [
+    "운전자가 좋아하는 노래",
+    "신호등 색",
+    "사람",
+    "차선"
+   ]
+  },
+  "answer": 0,
+  "ex": "자율주행 AI는 안전과 관련된 신호등, 사람, 차선을 꼭 알아봐야 해요."
+ },
+ {
+  "id": "q105",
+  "cat": "ai",
+  "diff": "easy",
+  "type": "ox",
+  "prompt": "AI는 사람이 준 데이터로 배운다.",
+  "payload": null,
+  "answer": "O",
+  "ex": "AI는 데이터 속 규칙을 찾아 배워요."
+ },
+ {
+  "id": "q106",
+  "cat": "ai",
+  "diff": "easy",
+  "type": "ox",
+  "prompt": "AI가 만든 그림이나 글은 항상 사실이다.",
+  "payload": null,
+  "answer": "X",
+  "ex": "AI가 만든 결과도 틀리거나 지어낸 것일 수 있어요."
+ },
+ {
+  "id": "q107",
+  "cat": "ai",
+  "diff": "normal",
+  "type": "ox",
+  "prompt": "추천 영상은 내가 전에 본 영상의 영향을 받는다.",
+  "payload": null,
+  "answer": "O",
+  "ex": "추천 AI는 내 시청 기록을 보고 비슷한 영상을 골라요."
+ },
+ {
+  "id": "q108",
+  "cat": "ai",
+  "diff": "normal",
+  "type": "ox",
+  "prompt": "AI 챗봇에게 내 집 주소를 알려줘도 괜찮다.",
+  "payload": null,
+  "answer": "X",
+  "ex": "AI 서비스에도 개인정보는 함부로 알려 주면 안 돼요."
+ },
+ {
+  "id": "q109",
+  "cat": "ai",
+  "diff": "easy",
+  "type": "puzzle",
+  "prompt": "색깔 규칙을 찾아 봐! 다음은?",
+  "payload": {
+   "seq": [
+    "🟥",
+    "🟨",
+    "🟥",
+    "🟨",
+    "🟥",
+    "?"
+   ],
+   "choices": [
+    "🟨",
+    "🟥",
+    "🟦",
+    "🟩"
+   ]
+  },
+  "answer": 0,
+  "ex": "빨강과 노랑이 번갈아 나와요."
+ },
+ {
+  "id": "q110",
+  "cat": "ai",
+  "diff": "normal",
+  "type": "puzzle",
+  "prompt": "숫자 규칙을 찾아 봐! 다음은?",
+  "payload": {
+   "seq": [
+    1,
+    2,
+    4,
+    8,
+    16,
+    "?"
+   ],
+   "choices": [
+    32,
+    18,
+    24,
+    20
+   ]
+  },
+  "answer": 0,
+  "ex": "앞의 수에 2를 곱하는 규칙이에요."
+ },
+ {
+  "id": "q111",
+  "cat": "ai",
+  "diff": "normal",
+  "type": "puzzle",
+  "prompt": "동물 행렬의 규칙은? 다음은?",
+  "payload": {
+   "seq": [
+    "🦁",
+    "🐘",
+    "🦒",
+    "🦁",
+    "🐘",
+    "?"
+   ],
+   "choices": [
+    "🦒",
+    "🦁",
+    "🐘",
+    "🐒"
+   ]
+  },
+  "answer": 0,
+  "ex": "사자, 코끼리, 기린이 반복돼요."
+ },
+ {
+  "id": "q112",
+  "cat": "ai",
+  "diff": "hard",
+  "type": "puzzle",
+  "prompt": "숫자 규칙을 찾아 봐! 다음은?",
+  "payload": {
+   "seq": [
+    1,
+    4,
+    9,
+    16,
+    25,
+    "?"
+   ],
+   "choices": [
+    36,
+    30,
+    35,
+    49
+   ]
+  },
+  "answer": 0,
+  "ex": "1×1, 2×2, 3×3… 다음은 6×6=36이에요."
+ },
+ {
+  "id": "q113",
+  "cat": "ai",
+  "diff": "normal",
+  "type": "keyword",
+  "prompt": "사람의 말을 듣고 글자로 바꾸는 기술은? ○○ 인식 (2글자)",
+  "payload": null,
+  "answer": [
+   "음성",
+   "음성인식"
+  ],
+  "ex": "음성 인식은 AI 스피커와 받아쓰기에 쓰여요."
+ },
+ {
+  "id": "q114",
+  "cat": "ai",
+  "diff": "easy",
+  "type": "choice4",
+  "prompt": "AI가 사진 속 동물이 무엇인지 맞히려면 가장 먼저 무엇을 봐야 할까?",
+  "payload": {
+   "choices": [
+    "동물의 모양과 특징",
+    "사진 파일 이름",
+    "사진 찍은 날짜",
+    "화면 밝기"
+   ]
+  },
+  "answer": 0,
+  "ex": "AI는 귀 모양, 무늬 같은 특징을 보고 구분해요."
+ },
+ {
+  "id": "q115",
+  "cat": "digital",
+  "diff": "easy",
+  "type": "choice4",
+  "prompt": "친구가 내 게임 계정 비밀번호를 물어보면?",
+  "payload": {
+   "choices": [
+    "알려 주지 않는다",
+    "바로 알려 준다",
+    "반만 알려 준다",
+    "SNS에 올린다"
+   ]
+  },
+  "answer": 0,
+  "ex": "비밀번호는 친한 친구에게도 비밀이에요."
+ },
+ {
+  "id": "q116",
+  "cat": "digital",
+  "diff": "easy",
+  "type": "choice4",
+  "prompt": "인터넷에서 본 정보가 진짜인지 확인하는 좋은 방법은?",
+  "payload": {
+   "choices": [
+    "여러 곳에서 찾아본다",
+    "제목만 읽는다",
+    "바로 친구에게 퍼뜨린다",
+    "댓글 수만 본다"
+   ]
+  },
+  "answer": 0,
+  "ex": "믿을 만한 여러 출처를 비교해 봐야 해요."
+ },
+ {
+  "id": "q117",
+  "cat": "digital",
+  "diff": "normal",
+  "type": "choice4",
+  "prompt": "컴퓨터에서 파일을 정리해 담아 두는 곳은?",
+  "payload": {
+   "choices": [
+    "폴더",
+    "배터리",
+    "스피커",
+    "마우스"
+   ]
+  },
+  "answer": 0,
+  "ex": "폴더에 파일을 나누어 담으면 찾기 쉬워요."
+ },
+ {
+  "id": "q118",
+  "cat": "digital",
+  "diff": "normal",
+  "type": "choice4",
+  "prompt": "다음 중 출력 장치는?",
+  "payload": {
+   "choices": [
+    "프린터",
+    "키보드",
+    "마우스",
+    "마이크"
+   ]
+  },
+  "answer": 0,
+  "ex": "프린터는 컴퓨터의 정보를 종이로 내보내는 출력 장치예요."
+ },
+ {
+  "id": "q119",
+  "cat": "digital",
+  "diff": "normal",
+  "type": "choice4",
+  "prompt": "온라인에서 기분 나쁜 말을 들었을 때 가장 좋은 행동은?",
+  "payload": {
+   "choices": [
+    "캡처해서 어른에게 알린다",
+    "똑같이 욕한다",
+    "계속 참는다",
+    "내 주소를 알려 준다"
+   ]
+  },
+  "answer": 0,
+  "ex": "증거를 남기고 믿을 수 있는 어른에게 도움을 요청해요."
+ },
+ {
+  "id": "q120",
+  "cat": "digital",
+  "diff": "hard",
+  "type": "choice4",
+  "prompt": "비밀번호를 더 안전하게 지키는 방법이 아닌 것은?",
+  "payload": {
+   "choices": [
+    "모든 사이트에 같은 비밀번호 쓰기",
+    "길게 만들기",
+    "숫자와 기호 섞기",
+    "2단계 인증 켜기"
+   ]
+  },
+  "answer": 0,
+  "ex": "한 곳이 털리면 다른 곳도 위험해지니 사이트마다 다르게 써요."
+ },
+ {
+  "id": "q121",
+  "cat": "digital",
+  "diff": "easy",
+  "type": "ox",
+  "prompt": "공공 와이파이에서는 중요한 비밀번호 입력을 조심해야 한다.",
+  "payload": null,
+  "answer": "O",
+  "ex": "공공 와이파이는 다른 사람이 엿볼 수 있어 조심해야 해요."
+ },
+ {
+  "id": "q122",
+  "cat": "digital",
+  "diff": "easy",
+  "type": "ox",
+  "prompt": "친구 사진을 허락 없이 SNS에 올려도 된다.",
+  "payload": null,
+  "answer": "X",
+  "ex": "다른 사람 사진은 꼭 허락을 받고 올려요."
+ },
+ {
+  "id": "q123",
+  "cat": "digital",
+  "diff": "normal",
+  "type": "ox",
+  "prompt": "컴퓨터는 모든 정보를 0과 1로 바꿔서 저장한다.",
+  "payload": null,
+  "answer": "O",
+  "ex": "컴퓨터는 이진수(0과 1)로 글자, 사진, 소리를 저장해요."
+ },
+ {
+  "id": "q124",
+  "cat": "digital",
+  "diff": "normal",
+  "type": "ox",
+  "prompt": "마이크는 출력 장치다.",
+  "payload": null,
+  "answer": "X",
+  "ex": "마이크는 소리를 컴퓨터에 넣는 입력 장치예요."
+ },
+ {
+  "id": "q125",
+  "cat": "digital",
+  "diff": "easy",
+  "type": "pixel_art",
+  "prompt": "전광판에 별을 켜 봐!",
+  "payload": {
+   "target": [
+    "00100",
+    "01110",
+    "11111",
+    "01110",
+    "01010"
+   ]
+  },
+  "answer": null,
+  "ex": "점을 하나씩 켜서 모양을 만드는 게 픽셀 그림이에요."
+ },
+ {
+  "id": "q126",
+  "cat": "digital",
+  "diff": "normal",
+  "type": "pixel_art",
+  "prompt": "전광판에 집 모양을 켜 봐!",
+  "payload": {
+   "target": [
+    "00100",
+    "01110",
+    "11111",
+    "10101",
+    "11111"
+   ]
+  },
+  "answer": null,
+  "ex": "작은 점(픽셀)이 모이면 그림이 돼요."
+ },
+ {
+  "id": "q127",
+  "cat": "digital",
+  "diff": "hard",
+  "type": "pixel_art",
+  "prompt": "전광판에 로봇 얼굴을 켜 봐!",
+  "payload": {
+   "target": [
+    "111111",
+    "100001",
+    "101101",
+    "100001",
+    "101101",
+    "111111"
+   ]
+  },
+  "answer": null,
+  "ex": "칸이 많을수록 더 자세한 그림을 그릴 수 있어요."
+ },
+ {
+  "id": "q128",
+  "cat": "digital",
+  "diff": "normal",
+  "type": "keyword",
+  "prompt": "인터넷에서 나를 증명하는 비밀 글자는? 비밀○○ (2글자)",
+  "payload": null,
+  "answer": [
+   "번호",
+   "비밀번호"
+  ],
+  "ex": "비밀번호는 나만 알고 있어야 해요."
+ },
+ {
+  "id": "q129",
+  "cat": "digital",
+  "diff": "easy",
+  "type": "choice4",
+  "prompt": "모르는 사람이 메시지로 \"선물에 당첨됐어요! 링크를 누르세요\"라고 하면?",
+  "payload": {
+   "choices": [
+    "누르지 않고 어른에게 알린다",
+    "바로 누른다",
+    "내 전화번호를 보낸다",
+    "친구에게 퍼뜨린다"
+   ]
+  },
+  "answer": 0,
+  "ex": "이런 메시지는 개인정보를 훔치려는 속임수일 수 있어요."
+ },
+ {
+  "id": "q130",
+  "cat": "making",
+  "diff": "easy",
+  "type": "choice4",
+  "prompt": "빛의 밝기를 알아채는 센서는?",
+  "payload": {
+   "choices": [
+    "조도 센서",
+    "온도 센서",
+    "소리 센서",
+    "무게 센서"
+   ]
+  },
+  "answer": 0,
+  "ex": "조도 센서는 밝고 어두운 정도를 재요."
+ },
+ {
+  "id": "q131",
+  "cat": "making",
+  "diff": "easy",
+  "type": "choice4",
+  "prompt": "로봇이 소리를 내게 해 주는 부품은?",
+  "payload": {
+   "choices": [
+    "스피커",
+    "배터리",
+    "바퀴",
+    "센서"
+   ]
+  },
+  "answer": 0,
+  "ex": "스피커는 전기 신호를 소리로 바꿔요."
+ },
+ {
+  "id": "q132",
+  "cat": "making",
+  "diff": "normal",
+  "type": "choice4",
+  "prompt": "큰 기어가 한 바퀴 돌 때 맞물린 작은 기어는 어떻게 될까?",
+  "payload": {
+   "choices": [
+    "여러 바퀴 돈다",
+    "멈춘다",
+    "반 바퀴만 돈다",
+    "반대로 커진다"
+   ]
+  },
+  "answer": 0,
+  "ex": "작은 기어는 톱니가 적어서 더 많이 돌아요."
+ },
+ {
+  "id": "q133",
+  "cat": "making",
+  "diff": "normal",
+  "type": "choice4",
+  "prompt": "회로에서 전기를 켜고 끄는 부품은?",
+  "payload": {
+   "choices": [
+    "스위치",
+    "모터",
+    "바퀴",
+    "기어"
+   ]
+  },
+  "answer": 0,
+  "ex": "스위치로 전기 길을 열고 닫아요."
+ },
+ {
+  "id": "q134",
+  "cat": "making",
+  "diff": "hard",
+  "type": "choice4",
+  "prompt": "로봇이 선을 따라 움직이게(라인 트레이서) 하려면 어떤 센서가 필요할까?",
+  "payload": {
+   "choices": [
+    "적외선(빛) 센서",
+    "온도 센서",
+    "소리 센서",
+    "습도 센서"
+   ]
+  },
+  "answer": 0,
+  "ex": "바닥의 검은 선과 흰 바닥이 빛을 다르게 반사하는 걸 이용해요."
+ },
+ {
+  "id": "q135",
+  "cat": "making",
+  "diff": "easy",
+  "type": "ox",
+  "prompt": "배터리의 +와 -를 바꾸어 끼우면 모터가 반대로 돌 수 있다.",
+  "payload": null,
+  "answer": "O",
+  "ex": "전기가 흐르는 방향이 바뀌면 모터도 반대로 돌아요."
+ },
+ {
+  "id": "q136",
+  "cat": "making",
+  "diff": "easy",
+  "type": "ox",
+  "prompt": "LED는 전기를 넣으면 빛을 낸다.",
+  "payload": null,
+  "answer": "O",
+  "ex": "LED는 전기가 흐르면 빛나는 부품이에요."
+ },
+ {
+  "id": "q137",
+  "cat": "making",
+  "diff": "normal",
+  "type": "ox",
+  "prompt": "로봇의 센서는 로봇의 \"눈과 귀\" 역할을 한다.",
+  "payload": null,
+  "answer": "O",
+  "ex": "센서로 주변을 알아채고, 그에 따라 움직여요."
+ },
+ {
+  "id": "q138",
+  "cat": "making",
+  "diff": "normal",
+  "type": "ox",
+  "prompt": "3D 프린터는 종이에만 인쇄할 수 있다.",
+  "payload": null,
+  "answer": "X",
+  "ex": "3D 프린터는 플라스틱 등을 한 층씩 쌓아 입체 물건을 만들어요."
+ },
+ {
+  "id": "q139",
+  "cat": "making",
+  "diff": "easy",
+  "type": "order",
+  "prompt": "종이 비행기를 만드는 순서는?",
+  "payload": {
+   "items": [
+    "종이를 반으로 접는다",
+    "양쪽 모서리를 접는다",
+    "날개를 접는다",
+    "날려 본다"
+   ]
+  },
+  "answer": null,
+  "ex": "만들기도 순서대로 해야 잘 날아요."
+ },
+ {
+  "id": "q140",
+  "cat": "making",
+  "diff": "normal",
+  "type": "order",
+  "prompt": "로봇 자동차가 장애물을 피하게 만드는 순서는?",
+  "payload": {
+   "items": [
+    "거리 센서를 단다",
+    "센서 값을 읽는 코드를 쓴다",
+    "가까우면 방향을 바꾸게 한다",
+    "직접 시험해 본다"
+   ]
+  },
+  "answer": null,
+  "ex": "만들기 → 코딩 → 시험의 순서로 고쳐 나가요."
+ },
+ {
+  "id": "q141",
+  "cat": "making",
+  "diff": "hard",
+  "type": "order",
+  "prompt": "발명품을 만드는 과정의 순서는?",
+  "payload": {
+   "items": [
+    "불편한 점을 찾는다",
+    "아이디어를 그린다",
+    "만들어 본다",
+    "써 보고 고친다"
+   ]
+  },
+  "answer": null,
+  "ex": "문제 찾기 → 설계 → 제작 → 개선이 메이킹의 흐름이에요."
+ },
+ {
+  "id": "q142",
+  "cat": "making",
+  "diff": "normal",
+  "type": "keyword",
+  "prompt": "주변의 빛, 소리, 거리를 알아채는 부품은? (2글자)",
+  "payload": null,
+  "answer": [
+   "센서"
+  ],
+  "ex": "센서는 로봇이 세상을 느끼는 부품이에요."
+ },
+ {
+  "id": "q143",
+  "cat": "making",
+  "diff": "easy",
+  "type": "choice4",
+  "prompt": "전기가 흐르는 길을 무엇이라고 할까?",
+  "payload": {
+   "choices": [
+    "회로",
+    "폴더",
+    "픽셀",
+    "명령"
+   ]
+  },
+  "answer": 0,
+  "ex": "전지, 전선, 전구가 이어진 전기의 길이 회로예요."
+ },
+ {
+  "id": "q144",
+  "cat": "making",
+  "diff": "normal",
+  "type": "choice4",
+  "prompt": "도로카 로봇의 배터리가 다 떨어지면 생기는 일은?",
+  "payload": {
+   "choices": [
+    "모터가 멈춘다",
+    "더 빨라진다",
+    "색이 바뀐다",
+    "센서가 커진다"
+   ]
+  },
+  "answer": 0,
+  "ex": "모터와 센서는 모두 배터리의 전기로 움직여요."
+ },
+ {
+  "id": "q145",
+  "cat": "computing",
+  "diff": "easy",
+  "type": "choice4",
+  "prompt": "명령을 위에서부터 한 줄씩 차례로 하는 것을 무엇이라고 할까?",
+  "payload": {
+   "choices": [
+    "순차",
+    "반복",
+    "조건",
+    "변수"
+   ]
+  },
+  "answer": 0,
+  "ex": "순차 실행은 코딩의 가장 기본이에요."
+ },
+ {
+  "id": "q146",
+  "cat": "computing",
+  "diff": "normal",
+  "type": "choice4",
+  "prompt": "\"앞으로 1칸\"을 5번 쓰는 대신 쓸 수 있는 것은?",
+  "payload": {
+   "choices": [
+    "5번 반복하기",
+    "조건 넣기",
+    "변수 지우기",
+    "프로그램 끄기"
+   ]
+  },
+  "answer": 0,
+  "ex": "반복을 쓰면 같은 명령을 짧게 쓸 수 있어요."
+ },
+ {
+  "id": "q147",
+  "cat": "computing",
+  "diff": "normal",
+  "type": "choice4",
+  "prompt": "\"만약 앞에 벽이 있으면 오른쪽으로 돈다\"에서 \"만약\"은 무엇일까?",
+  "payload": {
+   "choices": [
+    "조건",
+    "반복",
+    "변수",
+    "함수"
+   ]
+  },
+  "answer": 0,
+  "ex": "조건에 따라 다르게 움직이게 하는 것이 조건문이에요."
+ },
+ {
+  "id": "q148",
+  "cat": "computing",
+  "diff": "hard",
+  "type": "choice4",
+  "prompt": "큰 문제를 작은 문제로 나누어 푸는 생각을 무엇이라고 할까?",
+  "payload": {
+   "choices": [
+    "분해",
+    "복사",
+    "삭제",
+    "충전"
+   ]
+  },
+  "answer": 0,
+  "ex": "문제를 쪼개면 하나씩 해결하기 쉬워요. 컴퓨팅 사고의 하나예요."
+ },
+ {
+  "id": "q149",
+  "cat": "computing",
+  "diff": "easy",
+  "type": "ox",
+  "prompt": "순서도는 일의 순서를 그림으로 나타낸 것이다.",
+  "payload": null,
+  "answer": "O",
+  "ex": "순서도로 알고리즘을 한눈에 볼 수 있어요."
+ },
+ {
+  "id": "q150",
+  "cat": "computing",
+  "diff": "easy",
+  "type": "ox",
+  "prompt": "프로그램에 버그가 있으면 생각과 다르게 움직일 수 있다.",
+  "payload": null,
+  "answer": "O",
+  "ex": "버그를 찾아 고치는 일을 디버깅이라고 해요."
+ },
+ {
+  "id": "q151",
+  "cat": "computing",
+  "diff": "normal",
+  "type": "ox",
+  "prompt": "반복문을 쓰면 같은 명령을 여러 번 쓰지 않아도 된다.",
+  "payload": null,
+  "answer": "O",
+  "ex": "반복문은 코드를 짧고 읽기 쉽게 만들어요."
+ },
+ {
+  "id": "q152",
+  "cat": "computing",
+  "diff": "easy",
+  "type": "order",
+  "prompt": "아침에 학교 갈 준비 순서는?",
+  "payload": {
+   "items": [
+    "일어난다",
+    "세수를 한다",
+    "옷을 입는다",
+    "가방을 메고 나간다"
+   ]
+  },
+  "answer": null,
+  "ex": "하루 일과도 순서대로 나누면 알고리즘이 돼요."
+ },
+ {
+  "id": "q153",
+  "cat": "computing",
+  "diff": "normal",
+  "type": "order",
+  "prompt": "샌드위치를 만드는 알고리즘은?",
+  "payload": {
+   "items": [
+    "빵을 놓는다",
+    "잼을 바른다",
+    "치즈를 올린다",
+    "빵을 덮는다"
+   ]
+  },
+  "answer": null,
+  "ex": "순서가 바뀌면 결과가 달라져요."
+ },
+ {
+  "id": "q154",
+  "cat": "computing",
+  "diff": "hard",
+  "type": "order",
+  "prompt": "게임 점수 프로그램의 순서는?",
+  "payload": {
+   "items": [
+    "점수를 0으로 정한다",
+    "문제를 낸다",
+    "맞히면 점수에 10을 더한다",
+    "점수를 보여 준다"
+   ]
+  },
+  "answer": null,
+  "ex": "변수를 먼저 만들고, 바꾸고, 보여 주는 순서예요."
+ },
+ {
+  "id": "q155",
+  "cat": "computing",
+  "diff": "easy",
+  "type": "command_order",
+  "prompt": "🤖 도로카가 사과 🍎를 줍는 명령 순서는?",
+  "payload": {
+   "items": [
+    "앞으로 2칸",
+    "왼쪽으로 돌기",
+    "앞으로 1칸",
+    "사과 줍기"
+   ]
+  },
+  "answer": null,
+  "ex": "명령 블록은 쌓은 순서대로 실행돼요."
+ },
+ {
+  "id": "q156",
+  "cat": "computing",
+  "diff": "normal",
+  "type": "command_order",
+  "prompt": "🤖 도로카 신호등 프로그램을 완성해요!",
+  "payload": {
+   "items": [
+    "신호등 보기",
+    "만약 빨간불이면 멈춤",
+    "초록불이 되면 출발",
+    "앞으로 3칸"
+   ]
+  },
+  "answer": null,
+  "ex": "조건(만약)과 순차 실행을 함께 써요."
+ },
+ {
+  "id": "q157",
+  "cat": "computing",
+  "diff": "hard",
+  "type": "command_order",
+  "prompt": "🤖 정사각형을 그리는 도로카 명령 순서는?",
+  "payload": {
+   "items": [
+    "펜 내리기",
+    "4번 반복 시작",
+    "앞으로 2칸 + 오른쪽 돌기",
+    "반복 끝",
+    "펜 올리기"
+   ]
+  },
+  "answer": null,
+  "ex": "반복을 쓰면 정사각형을 짧은 코드로 그릴 수 있어요."
+ },
+ {
+  "id": "q158",
+  "cat": "computing",
+  "diff": "normal",
+  "type": "keyword",
+  "prompt": "프로그램의 잘못된 부분을 무엇이라고 할까? (2글자, 영어로는 bug)",
+  "payload": null,
+  "answer": [
+   "버그",
+   "bug"
+  ],
+  "ex": "버그를 찾아 고치는 일이 디버깅이에요."
+ },
+ {
+  "id": "q159",
+  "cat": "computing",
+  "diff": "easy",
+  "type": "choice4",
+  "prompt": "도로카에게 \"앞으로 3칸\"을 시키려고 쓰는 것은?",
+  "payload": {
+   "choices": [
+    "명령 블록",
+    "사진",
+    "음악",
+    "배터리"
+   ]
+  },
+  "answer": 0,
+  "ex": "명령 블록을 쌓아서 로봇에게 할 일을 알려 줘요."
+ }
+]

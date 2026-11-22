@@ -1,0 +1,28 @@
+{
+  "name": "codex-trial",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "dev:api": "tsx watch server/dev.ts",
+    "build": "node db/migrate.mjs && vite build",
+    "db:setup": "node db/migrate.mjs",
+    "typecheck": "tsc -p .",
+    "test": "node scripts/playtest.mjs",
+    "preview": "vite preview",
+    "db:reseed": "RESEED_CONTENT=1 node db/migrate.mjs"
+  },
+  "dependencies": {
+    "express": "^5.3.0",
+    "pg": "^8.23.1"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.0.0",
+    "@types/pg": "^8.23.1",
+    "tsx": "^4.23.15",
+    "typescript": "^5.6.0",
+    "vite": "^6.0.0"
+  }
+}
