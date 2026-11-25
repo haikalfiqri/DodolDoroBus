@@ -1,6 +1,6 @@
 import { api } from '../api'
-import { esc, onAct, talk } from '../ui/dom'
-import { FORM_KO, MOOD_COL, MOOD_KO, petImg, treeSprite, CAT_KO } from '../ui/sprites'
+import { closeModal, esc, modal, onAct, talk, toast } from '../ui/dom'
+import { FORM_KO, MOOD_COL, MOOD_KO, petImg, CAT_KO } from '../ui/sprites'
 import { getMe, go } from '../main'
 
 export async function hubScreen(body: HTMLElement): Promise<void> {
@@ -15,46 +15,55 @@ export async function hubScreen(body: HTMLElement): Promise<void> {
     : ready ? talk('naty', '알이 흔들려! 마이룸에서 눌러 봐!')
     : talk('codex', ch1.cleared < ch1.total ? `다음 시험이 기다린다, ${me.nickname}.` : '1장을 모두 통과했군. 배틀룸이 열렸다.')
   const pct = p.xpToNext ? Math.round((p.xp / p.xpToNext) * 100) : 100
-  body.innerHTML = `<div class="hub">
-    <div style="display:grid;gap:12px;align-content:start">
-      <div class="partner-stage">
-        <i class="tree" style="left:4%;top:40%">${treeSprite()}</i><i class="tree" style="right:6%;top:44%">${treeSprite()}</i>
-        <div class="partner-info"><div class="namecard"><b>${esc(p.nickname)}</b> <span class="tag">Lv.${p.level} ${FORM_KO[p.form]}</span>
-          <div class="small"><span class="tag cat-${p.type}">${CAT_KO[p.type]} 타입</span> · 파트너</div></div>
-          <div class="namecard small"><span style="display:inline-block;width:12px;height:12px;border-radius:50%;border:2px solid #1f1a30;background:${MOOD_COL[p.mood]}"></span> ${MOOD_KO[p.mood]}</div></div>
-        <div class="shadow"></div><div class="pet-wrap">${petImg(p.speciesId, p.form)}</div>
+  const growth = p.level < 4 ? 'Lv 4에 꼬마로 성장' : p.level < 7 ? 'Lv 7에 어른으로 성장' : p.level < 10 ? 'Lv 10에 빛나는 모습' : '최고 레벨!'
+  const questReady = qs ? qs.quests.filter((x) => !x.claimed && x.progress >= x.target).length : 0
+  const dock = (act: string, ic: string, label: string, opts: { off?: boolean; badge?: number; hint?: string } = {}) =>
+    `<button class="dock-btn" data-act="${act}" ${opts.off ? `disabled title="${esc(opts.hint ?? '')}"` : ''}><span class="ic">${opts.off ? '🔒' : ic}</span><span>${label}</span>${opts.badge ? `<u>${opts.badge}</u>` : ''}</button>`
+  body.innerHTML = `<div class="hub2">
+    <div class="hub-scene">
+      <div class="hub-card">
+        <div class="row between"><b class="nm">${esc(p.nickname)}</b><span class="tag">Lv.${p.level} ${FORM_KO[p.form]}</span></div>
+        <div class="small"><span class="tag cat-${p.type}">${CAT_KO[p.type]} 타입</span> <i class="mood-dot" style="background:${MOOD_COL[p.mood]}"></i>${MOOD_KO[p.mood]}</div>
+        <div class="bar xp"><i style="width:${pct}%"></i></div>
+        <div class="small mute">경험치 ${p.xp} / ${p.xpToNext || 'MAX'} · ${growth}</div>
       </div>
-      <div class="box soft"><div class="row between small"><span>경험치 ${p.xp} / ${p.xpToNext || 'MAX'}</span><span>${p.level < 4 ? 'Lv 4에 꼬마로 성장' : p.level < 7 ? 'Lv 7에 어른으로 성장' : p.level < 10 ? 'Lv 10에 빛나는 모습' : '최고 레벨!'}</span></div>
-        <div class="bar xp"><i style="width:${pct}%"></i></div></div>
-      ${tip}
+      <div class="hub-pet"><div class="shadow"></div><div class="pet-wrap">${petImg(p.speciesId, p.form)}</div></div>
+      <div class="hub-tip">${tip}</div>
+      <button class="hub-start" data-act="map"><span class="ic">🗺</span><span><b>코덱스의 시험 · 1장</b><small>${esc(ch1.nameKo)} · 클리어 ${ch1.cleared} / ${ch1.total}</small></span><span class="go">▶</span></button>
     </div>
-    <div style="display:grid;gap:12px;align-content:start">
-      <div class="menu-grid">
-        <button class="mbtn main" data-act="map"><span class="ic">🗺</span><span><b>코덱스의 시험 · 1장</b><small>${esc(ch1.nameKo)} · 클리어 ${ch1.cleared} / ${ch1.total}</small></span></button>
-        <button class="mbtn" data-act="room" ${me.unlocked.myRoom ? '' : 'disabled'}><span class="ic">🏠</span><span><b>마이룸</b><small>${me.unlocked.myRoom ? '펫 · 둥지 · 도감' : '1스테이지 클리어 후'}</small></span>${ready ? `<u>${ready}</u>` : ''}</button>
-        <button class="mbtn" data-act="mail"><span class="ic">✉</span><span><b>우편함</b><small>보상 받기</small></span>${me.unclaimedMail ? `<u>${me.unclaimedMail}</u>` : ''}</button>
-        <button class="mbtn" data-act="shop" ${me.unlocked.shop ? '' : 'disabled'}><span class="ic">🛍</span><span><b>자일로 상점</b><small>${me.unlocked.shop ? '먹이 · 꾸미기' : '1스테이지 클리어 후'}</small></span></button>
-        <button class="mbtn" data-act="report"><span class="ic">📈</span><span><b>보이드의 리포트</b><small>분야별 정답률</small></span></button>
-        <button class="mbtn" data-act="battleRoom" ${me.battleRoomUnlocked ? '' : 'disabled'}><span class="ic">${me.battleRoomUnlocked ? '⚔' : '🔒'}</span><span><b>배틀룸</b><small>${me.battleRoomUnlocked ? '이번 주 시험 · 랭킹' : '1장 보스를 깨면 열려요'}</small></span></button>
-      </div>
-      ${qs ? `<div class="box"><h3>📜 오늘의 퀘스트 <small>완료마다 ${qs.reward}셀 · 도장 ${qs.stamps} / ${qs.stampsNeeded} → 주간 알</small></h3>
-        ${qs.quests.map((x) => `<div class="rw"><span>${x.claimed ? '✅' : x.progress >= x.target ? '🎁' : '⬜'} ${esc(x.textKo)} <span class="small mute">${x.progress} / ${x.target}</span></span>
-          ${x.claimed ? '<span class="small mute">받음</span>' : `<button class="btn sm ${x.progress >= x.target ? 'green' : 'out'}" data-act="quest" data-id="${x.id}" ${x.progress >= x.target ? '' : 'disabled'}>받기</button>`}</div>`).join('')}</div>` : ''}
-      <div class="box soft"><h3>📅 오늘 <small>매일 0시(KST) 초기화</small></h3>
-        <div class="rw"><span>보상 배틀</span><b>${me.today.rewardedBattles} / 10</b></div>
-        <div class="rw"><span>받은 셀</span><b>${me.today.cellsEarned} / 60</b></div>
-        <div class="rw"><span>오늘 첫 클리어 보너스</span><b>${me.today.firstClearBonusAvailable ? '+5셀 대기 중 🎁' : '받음 ✓'}</b></div>
-        ${me.nestSlots ? `<div class="rw"><span>둥지</span><b>${eggs.filter((e) => e.nestSlot !== null).length} / ${me.nestSlots} 칸 사용</b></div>` : ''}
-      </div>
-    </div></div>`
+    <nav class="dock">
+      ${dock('room', '🏠', '마이룸', { off: !me.unlocked.myRoom, badge: ready, hint: '1스테이지 클리어 후' })}
+      ${dock('shop', '🛍', '상점', { off: !me.unlocked.shop, hint: '1스테이지 클리어 후' })}
+      ${qs ? dock('quests', '📜', '퀘스트', { badge: questReady }) : ''}
+      ${dock('today', '📅', '오늘')}
+      ${dock('report', '📈', '리포트')}
+      ${dock('battleRoom', '⚔', '배틀룸', { off: !me.battleRoomUnlocked, hint: '1장 보스를 깨면 열려요' })}
+    </nav></div>`
+
+  const questsHtml = () => qs ? `<h2>📜 오늘의 퀘스트</h2><p class="small mute">완료마다 ${qs.reward}셀 · 도장 ${qs.stamps} / ${qs.stampsNeeded} → 주간 알</p>
+    ${qs.quests.map((x) => `<div class="rw"><span>${x.claimed ? '✅' : x.progress >= x.target ? '🎁' : '⬜'} ${esc(x.textKo)} <span class="small mute">${x.progress} / ${x.target}</span></span>
+      ${x.claimed ? '<span class="small mute">받음</span>' : `<button class="btn sm ${x.progress >= x.target ? 'green' : 'out'}" data-act="quest" data-id="${x.id}" ${x.progress >= x.target ? '' : 'disabled'}>받기</button>`}</div>`).join('')}` : ''
+  const todayHtml = `<h2>📅 오늘</h2><p class="small mute">매일 0시(KST) 초기화</p>
+    <div class="rw"><span>보상 배틀</span><b>${me.today.rewardedBattles} / 10</b></div>
+    <div class="rw"><span>받은 셀</span><b>${me.today.cellsEarned} / 60</b></div>
+    <div class="rw"><span>오늘 첫 클리어 보너스</span><b>${me.today.firstClearBonusAvailable ? '+5셀 대기 중 🎁' : '받음 ✓'}</b></div>
+    ${me.nestSlots ? `<div class="rw"><span>둥지</span><b>${eggs.filter((e) => e.nestSlot !== null).length} / ${me.nestSlots} 칸 사용</b></div>` : ''}`
+  const popup = (html: string) => {
+    const m = modal(`${html}<div class="row end" style="margin-top:14px"><button class="btn out" data-act="close">닫기</button></div>`)
+    onAct(m, {
+      close: () => closeModal(),
+      quest: async (el) => {
+        const r = await api.claimQuest(el.dataset.id!)
+        closeModal()
+        toast(`퀘스트 완료! ${r.cellsMailed}셀이 우편함으로${r.stamp ? ' · 도장 +1' : ''}${r.weeklyEgg ? ' · 주간 알 획득! 🥚' : ''}`)
+        go('hub')
+      },
+    })
+  }
   onAct(body, {
-    map: () => go('map'), room: () => go('room'), mail: () => go('mail'), shop: () => go('shop'), report: () => go('report'),
+    map: () => go('map'), room: () => go('room'), shop: () => go('shop'), report: () => go('report'),
     battleRoom: () => go('battleroom'),
-    quest: async (el) => {
-      const r = await api.claimQuest(el.dataset.id!)
-      const { toast } = await import('../ui/dom')
-      toast(`퀘스트 완료! ${r.cellsMailed}셀이 우편함으로${r.stamp ? ' · 도장 +1' : ''}${r.weeklyEgg ? ' · 주간 알 획득! 🥚' : ''}`)
-      go('hub')
-    },
+    quests: () => popup(questsHtml()),
+    today: () => popup(todayHtml),
   })
 }

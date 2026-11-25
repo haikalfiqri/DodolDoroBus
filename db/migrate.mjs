@@ -7,6 +7,7 @@ import { join, dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { scryptSync, randomBytes } from 'node:crypto'
 import pg from 'pg'
+try { process.loadEnvFile() } catch { /* no .env file: use the real environment */ }
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..')
 const url = process.env.DATABASE_URL_UNPOOLED || process.env.DATABASE_URL || process.env.POSTGRES_URL
