@@ -37,27 +37,36 @@ export function readToken(t: string | undefined): Session | null {
   return p.exp > Date.now() ? { id: p.id, role: p.role } : null
 }
 
-function cookieValue(req: Request): string | undefined {
+/**
+ * Where the login token comes from:
+ *  1. the browser game sends it as the `ct_session` cookie (set by /auth/login)
+ *  2. any other client (e.g. DOROBUS, a test script) can send `Authorization: Bearer <token>`
+ *     using the `token` returned by /auth/login or /auth/register
+ */
+function tokenFrom(req: Request): string | undefined {
   const raw = req.headers.cookie ?? ''
   for (const part of raw.split(';')) {
     const [k, ...v] = part.trim().split('=')
     if (k === COOKIE) return decodeURIComponent(v.join('='))
   }
   const h = req.headers.authorization
-  return h?.startsWith('Bearer ') ? h.slice(7) : undefined
+  return h?.startsWith('Bearer ') ? h.slice(7).trim() : undefined
 }
-export function setSession(res: Response, s: Session | null): void {
+/** Sets (or clears) the login cookie and returns the token, so non-browser clients can use it as a Bearer token. */
+export function setSession(res: Response, s: Session | null): string | null {
   const secure = process.env.VERCEL ? '; Secure' : ''
-  res.setHeader('Set-Cookie', s
-    ? `${COOKIE}=${signToken(s)}; Path=/; HttpOnly; SameSite=Lax; Max-Age=${DAYS * 86400}${secure}`
+  const token = s ? signToken(s) : null
+  res.setHeader('Set-Cookie', token
+    ? `${COOKIE}=${token}; Path=/; HttpOnly; SameSite=Lax; Max-Age=${DAYS * 86400}${secure}`
     : `${COOKIE}=; Path=/; HttpOnly; SameSite=Lax; Max-Age=0${secure}`)
+  return token
 }
 
 declare module 'express-serve-static-core' {
   interface Request { session?: Session }
 }
 export function needLogin(req: Request, _res: Response, next: NextFunction): void {
-  const s = readToken(cookieValue(req))
+  const s = readToken(tokenFrom(req))
   if (!s) fail(401, 'login required')
   req.session = s
   next()
