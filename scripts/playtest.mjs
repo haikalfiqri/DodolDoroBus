@@ -3,6 +3,7 @@
 // (only this test can do that), then checks the transactions: mail claim, double claim, shop, feed, hatch.
 // Usage: API=http://localhost:3000 DATABASE_URL=... node scripts/playtest.mjs
 import pg from 'pg'
+try { process.loadEnvFile() } catch { /* no .env file: use the real environment */ }
 const API = process.env.API ?? 'http://localhost:3000'
 const url = process.env.DATABASE_URL
 const db = new pg.Client({ connectionString: url, ssl: /host=\/|localhost/.test(url) ? false : { rejectUnauthorized: false } })

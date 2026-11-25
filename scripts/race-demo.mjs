@@ -12,6 +12,7 @@
 //
 // Part 2 creates two small tables (race_demo_*) and drops them at the end. Use your OWN Neon branch, not main.
 import pg from 'pg'
+try { process.loadEnvFile() } catch { /* no .env file: use the real environment */ }
 
 const API = process.env.API ?? 'http://localhost:3000'
 const DB_URL = process.env.DATABASE_URL
