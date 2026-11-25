@@ -3,6 +3,7 @@ import { api, ApiError } from './api'
 import type { Me } from './types'
 import { esc, onAct, showError } from './ui/dom'
 import { MOOD_COL } from './ui/sprites'
+import { sfx } from './ui/sound'
 import { loginScreen } from './screens/login'
 import { onboardingScreen } from './screens/onboarding'
 import { hubScreen } from './screens/hub'
@@ -18,8 +19,8 @@ export type Screen = (body: HTMLElement, params: Record<string, string>) => Prom
 const SCREENS: Record<string, { fn: Screen; bar: boolean; flush?: boolean }> = {
   login: { fn: loginScreen, bar: false, flush: true },
   onboarding: { fn: onboardingScreen, bar: false, flush: true },
-  hub: { fn: hubScreen, bar: true },
-  map: { fn: mapScreen, bar: true },
+  hub: { fn: hubScreen, bar: true, flush: true },
+  map: { fn: mapScreen, bar: true, flush: true },
   battle: { fn: battleScreen, bar: false, flush: true },
   room: { fn: roomScreen, bar: true },
   mail: { fn: mailScreen, bar: true },
@@ -43,21 +44,48 @@ function drawBar(): void {
   const s = SCREENS[current]
   if (!s?.bar || !me) { bar.innerHTML = ''; return }
   const p = me.partner
+  const student = me.role === 'STUDENT'
+  const face = p ? `<img class="pet" src="/art/px/pet_${p.speciesId}_${p.form}.png" alt="">` : '<span>👤</span>'
+  const badge = (n: number) => (n ? `<u>${n}</u>` : '')
   bar.innerHTML = `<div class="topbar">
-    <button class="logo" data-act="home"><i>${p ? `<img class="pet" src="/art/px/pet_${p.speciesId}_${p.form}.png" alt="">` : ''}</i>코덱스의 시험</button>
-    ${me.role === 'ADMIN' ? '<span class="chip">🛠 관리자</span>' : ''}
+    <button class="logo" data-act="home">코덱스의 시험</button>
     <span class="sp"></span>
-    ${me.role === 'STUDENT' ? `<span class="chip cell">🔹 <b>${me.cells}</b> 셀</span>
-    ${p ? `<span class="chip"><i style="width:10px;height:10px;border-radius:50%;background:${MOOD_COL[p.mood]};border:1px solid #fff"></i>${esc(p.nickname)} Lv.${p.level}</span>` : ''}
-    <button class="tb-btn" data-act="mail">✉ 우편함${me.unclaimedMail ? `<u>${me.unclaimedMail}</u>` : ''}</button>` : ''}
-    <span class="chip">${esc(me.nickname)}</span>
-    <button class="tb-btn" data-act="logout">로그아웃</button></div>`
+    ${student ? `<span class="chip cell" title="셀">🔹 <b>${me.cells}</b></span>
+    <button class="tb-icon" data-act="mail" aria-label="우편함">✉${badge(me.unclaimedMail)}</button>` : '<span class="chip">🛠 관리자</span>'}
+    <div class="profile">
+      <button class="avatar" data-act="profile" aria-label="프로필 메뉴" aria-haspopup="menu">${face}${student ? badge(me.unclaimedMail) : ''}</button>
+      <div class="pmenu" role="menu" hidden>
+        <div class="pm-head"><div class="avatar big">${face}</div><div><b>${esc(me.nickname)}</b>
+          ${p ? `<div class="small"><i class="mood-dot" style="background:${MOOD_COL[p.mood]}"></i>${esc(p.nickname)} · Lv.${p.level}</div>` : ''}</div></div>
+        ${student ? `<button role="menuitem" data-act="mail">✉ 우편함 ${me.unclaimedMail ? `<span class="pm-badge">${me.unclaimedMail}</span>` : ''}</button>
+        <button role="menuitem" data-act="room" ${me.unlocked.myRoom ? '' : 'disabled'}>🏠 마이룸</button>
+        <button role="menuitem" data-act="shop" ${me.unlocked.shop ? '' : 'disabled'}>🛍 상점</button>
+        <button role="menuitem" data-act="report">📈 리포트</button>` : '<button role="menuitem" data-act="home">🛠 관리자 페이지</button>'}
+        <button role="menuitem" data-act="sound">${sfx.on ? '🔊 소리 끄기' : '🔇 소리 켜기'}</button>
+        <hr><button role="menuitem" class="danger" data-act="logout">로그아웃</button>
+      </div>
+    </div></div>`
+}
+function closeMenu(): void {
+  bar.querySelector('.pmenu')?.setAttribute('hidden', '')
+  bar.querySelector('.avatar')?.setAttribute('aria-expanded', 'false')
 }
 onAct(bar, {
   home: () => go(me?.role === 'ADMIN' ? 'admin' : 'hub'),
   mail: () => go('mail'),
+  room: () => go('room'),
+  shop: () => go('shop'),
+  report: () => go('report'),
+  sound: () => { sfx.toggle(); drawBar() },
+  profile: (el) => {
+    const open = bar.querySelector('.pmenu')?.toggleAttribute('hidden') === false
+    el.setAttribute('aria-expanded', String(open))
+  },
   logout: async () => { await api.logout(); me = null; go('login') },
 })
+// close the profile menu on any click outside it, or Esc
+document.addEventListener('click', (e) => { if (!(e.target as HTMLElement).closest('.profile')) closeMenu() })
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu() })
 
 export async function go(name: string, params: Record<string, string> = {}): Promise<void> {
   const s = SCREENS[name] ?? SCREENS.hub

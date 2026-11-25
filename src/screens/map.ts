@@ -22,15 +22,17 @@ export async function mapScreen(body: HTMLElement): Promise<void> {
   const list = stages.map((s) => `<button class="srow ${state(s)}" data-act="stage" data-id="${s.id}"><span class="n">${state(s) === 'lock' ? '🔒' : s.isBoss ? '👁' : s.order}</span>
     <div><b>${esc(s.nameKo)}</b><small class="mute" style="display:block">${esc(s.anomalyKo)} · 게이지 ${s.gauge}${s.eggSlot ? ' · 🥚' : ''}</small></div><span>${stars(s.bestStars)}</span></button>`).join('')
   const cleared = stages.filter((s) => s.firstCleared).length
-  body.innerHTML = `<div class="mapwrap"><div>
+  body.innerHTML = `<div class="mapwrap">
+    <div class="map-stage">
       <div class="smap"><span class="ttl">1장 · 신비한 초대, 사파리</span><i class="cloud" style="left:20%;top:8%;width:10%"></i><i class="cloud" style="left:46%;top:13%;width:7%"></i><i class="cave"></i>${deco}
         <svg class="path" viewBox="0 0 100 100" preserveAspectRatio="none"><polyline points="${pts}" fill="none" stroke="#a16207" stroke-width="5" stroke-dasharray="10 8" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg>${nodes}</div>
       <div class="slist">${list}</div>
-      <p class="small mute">★ 클리어 · ★★ 남은 에너지 50 이상 · ★★★ 80 이상 · 🥚 알 스테이지 · 실패해도 벌칙 없이 다시 도전!</p></div>
-    <aside style="display:grid;gap:12px;align-content:start">
+    </div>
+    <aside class="map-side">
       <div class="box"><h3>📖 1장 진행</h3><div class="bar xp"><i style="width:${Math.round((cleared / 7) * 100)}%"></i></div><p class="small">${cleared} / 7 스테이지 클리어</p></div>
       <div class="box soft"><h3>👁 코덱스의 호의</h3><p class="small">보스를 다시 깰 때마다 +1. 50이 되면 신화 알 확정!</p><div class="bar gauge"><i style="width:${me.mythicPity * 2}%"></i></div><p class="small center">${me.mythicPity} / 50</p></div>
       <div class="box soft"><h3>📚 다른 장</h3>${['2장 멈춰버린 기계의 노래', '3장 잊혀진 시간 속으로', '4장 구름 너머의 진실', '5장 코덱스의 선택'].map((c) => `<div class="small mute">🔒 ${c}</div>`).join('')}</div>
+      <p class="small mute">★ 클리어 · ★★ 남은 에너지 50 이상 · ★★★ 80 이상 · 🥚 알 스테이지 · 실패해도 벌칙 없이 다시 도전!</p>
       <button class="btn out" data-act="hub">← 홈</button></aside></div>`
   // background follows the stage under the cursor (swipes right -> left); starts on the stage you are up to
   const smap = body.querySelector<HTMLElement>('.smap')!
