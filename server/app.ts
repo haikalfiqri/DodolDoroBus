@@ -43,8 +43,8 @@ r.post('/auth/login', async (req, res) => {
   const { username, password } = req.body ?? {}
   const s = await one(pool, 'SELECT id, role, password_hash FROM students WHERE username=$1', [String(username ?? '').trim().toLowerCase()])
   if (!s || !checkPassword(String(password ?? ''), s.password_hash)) fail(401, '아이디 또는 비밀번호가 틀렸어요')
-  setSession(res, { id: s.id, role: s.role })
-  res.json({ ok: true, role: s.role })
+  const token = setSession(res, { id: s.id, role: s.role })
+  res.json({ ok: true, role: s.role, token })
 })
 r.post('/auth/register', async (req, res) => {
   const username = String(req.body?.username ?? '').trim().toLowerCase()
@@ -55,8 +55,8 @@ r.post('/auth/register', async (req, res) => {
   if (!nickname) fail(400, '닉네임을 입력해 주세요')
   const s = await one(pool, `INSERT INTO students (username, nickname, password_hash) VALUES ($1,$2,$3) ON CONFLICT (username) DO NOTHING RETURNING id, role`, [username, nickname, hashPassword(password)])
   if (!s) fail(409, '이미 있는 아이디예요')
-  setSession(res, { id: s.id, role: s.role })
-  res.json({ ok: true, role: s.role })
+  const token = setSession(res, { id: s.id, role: s.role })
+  res.json({ ok: true, role: s.role, token })
 })
 r.post('/auth/logout', (_req, res) => { setSession(res, null); res.json({ ok: true }) })
 
