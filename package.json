@@ -11,7 +11,8 @@
     "typecheck": "tsc -p .",
     "test": "node scripts/playtest.mjs",
     "preview": "vite preview",
-    "db:reseed": "RESEED_CONTENT=1 node db/migrate.mjs"
+    "db:reseed": "RESEED_CONTENT=1 node db/migrate.mjs",
+    "demo:race": "node scripts/race-demo.mjs"
   },
   "dependencies": {
     "express": "^5.3.0",

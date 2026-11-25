@@ -86,10 +86,28 @@ npm run db:setup                # create tables + load content, questions and de
 npm run dev:api                 # API on http://localhost:3000
 npm run dev                     # game on http://localhost:5173
 npm test                        # plays all of Chapter 1 through the API and checks the transactions
+npm run demo:race               # concurrency demo: 10 claims of one reward at the same moment
 ```
 
 Use your own database for development: a local PostgreSQL, or your own Neon branch (ask the deploy owner).
 On Vercel, `npm run build` runs the migrations and the seed automatically.
+
+### Concurrency demo
+
+`npm run demo:race` (with `npm run dev:api` running) fires 10 claims of the same reward mail at the same moment. Only one succeeds and `cell_ledger` gets exactly one row.
+With `DATABASE_URL` set it also runs the same race on a naive "SELECT, then UPDATE" design next to ours, to show the difference:
+
+```
+naive  (SELECT, then UPDATE)                   successful claims: 10 · wallet: 200 cells ❌ (should be 20)
+ours   (UPDATE ... WHERE claimed_at IS NULL)   successful claims:  1 · wallet:  20 cells ✅
+```
+
+Use your own database branch for this, not production.
+
+### Logging in from other clients
+
+`/api/auth/login` and `/api/auth/register` return a `token` as well as setting the login cookie.
+Clients that are not the browser game (for example DOROBUS, or a test script) can send it as `Authorization: Bearer <token>`.
 
 **Read [`docs/HOW_IT_WORKS.md`](docs/HOW_IT_WORKS.md)** for the database design, the transactions and every endpoint.
 
